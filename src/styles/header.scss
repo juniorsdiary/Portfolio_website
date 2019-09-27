@@ -1,27 +1,73 @@
+:root {
+  --display: none;
+}
+
 .header_block {
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
-    background: #3d3391;
-    color: #74f569;
-}
-.logo_block {
-    width: 200px;
-    height: 50px;
-    outline: 1px solid blue;
-}
-.logo_image {
-    width: 100%;
-    height: 100%;
+    background: rgb(113, 110, 145);
 }
 
 .navigation_block {
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+}
+
+.nav_links_set {
+  display: flex;
+  font-size: rem(20px);
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: auto;
+  height: 100%;
+  color: hsl(113, 9%, 82%);
+  @include sm-block {
+    @include fixed-vh;
+    background: rgb(113, 110, 145);
+    position: absolute;
+    display: var(--display);
+    flex-direction: column;
+    @include size(12);
+  }
 }
 
 .nav_link {
-    display: block;
+  text-transform: uppercase;
+  a {
     color: inherit;
+    display: block;
     padding: 1em;
-    font-size: rem(18px);
+  }
 }
+
+.hamburger_logo {
+  position: absolute;
+  cursor: pointer;
+  right: 5%;
+  top: 50%;
+  transform: translate(0,-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: -1;
+  @include sm-block {
+    z-index: 2;
+  }
+}
+
+.line {
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin: 3px;
+}
+
+.logo_block {}
+.logo_image {
+  font-size: 2rem;
+}
+.logo_image {
+  width: 100%;
+  height: 100%;
+}
+

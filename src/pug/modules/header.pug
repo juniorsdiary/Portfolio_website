@@ -1,8 +1,17 @@
 header.header_block.container
-    .logo_block
-        .logo_image
-    nav.navigation_block
-        a.nav_link(href='#home')='home'
-        a.nav_link(href='#about')='about'
-        a.nav_link(href='#projects')='projects'
-        a.nav_link(href='#contacts')='contacts'
+  .logo_block
+    span.logo_image='LOGO IMAGE'
+  nav.navigation_block
+    span.hamburger_logo
+      span.line
+      span.line
+      span.line
+    ul.nav_links_set
+      li.nav_link
+        a(href='#home')='home'
+      li.nav_link
+        a(href='#about')='about'
+      li.nav_link
+        a(href='#projects')='projects'
+      li.nav_link
+        a(href='#contacts')='contacts'

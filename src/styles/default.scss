@@ -2,14 +2,18 @@
 
 h1, h2, h3, h4, h5, h6 { margin: 0; }
 
-a { text-decoration: none; }
+a { 
+  text-decoration: none;
+}
 
 ul, li {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-
+body {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
 section, .section {
     position: relative;
     padding: 40px 0;
@@ -19,13 +23,13 @@ section, .section {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    min-height: 100vh;
+    @include fixed-vh;
   }
   
   .content-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    @include fixed-vh;
   }
   
   .container {
@@ -33,5 +37,4 @@ section, .section {
     flex: 0 0 auto;
     position: relative;
     margin: 0 auto;
-    max-width: $wrapper_width;
   }

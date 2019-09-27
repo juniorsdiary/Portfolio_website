@@ -2,33 +2,30 @@ $columns: 12;
 $atom: (100% / $columns);
 
 $break_lg: 1100px;
-$break_md: 960px;
-$break_sm: 780px;
-$break_xs: 560px;
+$break_bg: 980px;
+$break_md: 780px;
+$break_sm: 560px;
+$break_xs: 320px;
 
-$offset: 30px;
+$offset: 0;
 $offset_lg: $offset;
+$offset_bg: $offset;
 $offset_md: $offset;
 $offset_sm: $offset;
 $offset_xs: $offset;
 
 $offset_one_side: ($offset / 2);
 $offset_lg_one_side: ($offset_lg / 2);
+$offset_bg_one_side: ($offset_bg / 2);
 $offset_md_one_side: ($offset_md / 2);
 $offset_sm_one_side: ($offset_sm / 2);
 $offset_xs_one_side: ($offset_xs / 2);
 
 $fields: 30px;
-$fields_sm: 15px;
 
 @mixin wrapper-full(){
     padding-left: $fields;
     padding-right: $fields;
-
-    @include sm-block(){
-        padding-left: $fields_sm;
-        padding-right: $fields_sm;
-    }
 }
 
 @mixin row-offsets(){
@@ -90,6 +87,11 @@ $fields_sm: 15px;
 @mixin size-lg($n){
     $val: 100% / $columns * $n;
     @include lg(width, #{calc(#{$val} - #{$offset_lg})});
+}
+
+@mixin size-bg($n){
+    $val: 100% / $columns * $n;
+    @include bg(width, #{calc(#{$val} - #{$offset_bg})});
 }
 
 @mixin size-md($n){
@@ -169,6 +171,38 @@ $fields_sm: 15px;
 @mixin shift-lg-padding-right($n){
     $val: 100% / $columns * $n;
     @include lg(padding-right, #{calc(#{$val} + #{$offset_lg_one_side})});
+}
+
+@mixin shift-bg($n){
+    $val: 100% / $columns * $n;
+    @include bg(margin-left, #{calc(#{$val} + #{$offset_bg_one_side})});
+    @include bg(margin-right, #{calc(#{$val} + #{$offset_bg_one_side})});
+}
+
+@mixin shift-bg-left($n){
+    $val: 100% / $columns * $n;
+    @include bg(margin-left, #{calc(#{$val} + #{$offset_bg_one_side})});
+}
+
+@mixin shift-bg-right($n){
+    $val: 100% / $columns * $n;
+    @include bg(margin-right, #{calc(#{$val} + #{$offset_bg_one_side})});
+}
+
+@mixin shift-bg-padding($n){
+    $val: 100% / $columns * $n;
+    @include bg(padding-left, #{calc(#{$val} + #{$offset_bg_one_side})});
+    @include bg(padding-right, #{calc(#{$val} + #{$offset_bg_one_side})});
+}
+
+@mixin shift-bg-padding-left($n){
+    $val: 100% / $columns * $n;
+    @include bg(padding-left, #{calc(#{$val} + #{$offset_bg_one_side})});
+}
+
+@mixin shift-bg-padding-right($n){
+    $val: 100% / $columns * $n;
+    @include bg(padding-right, #{calc(#{$val} + #{$offset_bg_one_side})});
 }
 
 @mixin shift-md($n){
@@ -275,6 +309,18 @@ $fields_sm: 15px;
 
 @mixin lg-block(){
     @media screen and (max-width: $break_lg){
+        @content;
+    }
+}
+
+@mixin bg($name, $value){
+    @media screen and (max-width: $break_bg){
+        #{$name}: $value;
+    }
+}
+
+@mixin bg-block(){
+    @media screen and (max-width: $break_bg){
         @content;
     }
 }
