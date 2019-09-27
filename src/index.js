@@ -1,3 +1,2 @@
-import 'whatwg-fetch';
-import './styles/style.scss';
-import './js/script.js';
+import './styles/index.scss';
+import './js';
