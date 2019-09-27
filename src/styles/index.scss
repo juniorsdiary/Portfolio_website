@@ -1,6 +1,9 @@
 @import 'smart-grid';
+@import 'utilities';
+@import 'default';
+@import "header";
 @include reset();
-$color: black;
+
 body {
-    // background: $color;
+    background: $color;
 }

@@ -1,2 +1,1 @@
-console.log('ff');
-// import './main.js';
+import './main.js';

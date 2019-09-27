@@ -11,7 +11,7 @@ module.exports = {
     },
     "plugins": ["prettier"],
     "rules": {
-    "no-console": "off",
+      "no-console": "off",
       "prettier/prettier": "error",
       "no-cond-assign": 2,
       "no-console": 0,

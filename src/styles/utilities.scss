@@ -1,3 +1,6 @@
+$color: white;
+$wrapper_width: 1180px;
+$mainFontSize: 18px;
 @function rem($pixels, $context: $mainFontSize) {
     @if (unitless($pixels)) {
       $pixels: $pixels * 1px;

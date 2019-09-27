@@ -33,7 +33,7 @@ module.exports = merge(common, {
     overlay: true,
     hot: true,
     watchContentBase: true,
-    contentBase: paths.appPublic,
+    contentBase: paths.appSrc,
     historyApiFallback: true,
     noInfo: true,
     open: true,
