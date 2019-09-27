@@ -12,7 +12,7 @@ const PAGES = fs
 
 module.exports = {
   entry: {
-    main: ['@babel/polyfill', paths.appIndex],
+    main: ['@babel/polyfill', paths.appSrc],
   },
   module: {
     rules: [

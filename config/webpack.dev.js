@@ -10,15 +10,32 @@ module.exports = merge(common, {
     chunkFilename: '[name].bundle.js',
     publicPath: '/',
   },
+  resolve: {
+    alias: {
+      '~': paths.appSrc,
+    },
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: /node_modules/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
+  },
   devServer: {
     // clientLogLevel: 'silent',
     compress: true,
     overlay: true,
     hot: true,
     watchContentBase: true,
-    contentBase: paths.appSrc,
+    contentBase: paths.appPublic,
     historyApiFallback: true,
-    // noInfo: true,
+    noInfo: true,
     open: true,
   },
   devtool: 'eval-source-map',
