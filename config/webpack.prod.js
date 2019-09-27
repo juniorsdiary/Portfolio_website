@@ -4,7 +4,6 @@ const common = require('./webpack.config.js');
 const MiniCssPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CompressionPlugin = require('compression-webpack-plugin');
 
@@ -56,15 +55,5 @@ module.exports = merge(common, {
       minRatio: 0.8,
     }),
     new BundleAnalyzerPlugin(),
-    new CopyWebpackPlugin([
-      {
-        from: 'imgs',
-        to: 'imgs',
-      },
-      {
-        from: 'fonts',
-        to: 'fonts',
-      },
-    ]),
   ],
 });

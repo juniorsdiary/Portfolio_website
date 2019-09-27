@@ -3,6 +3,7 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const PAGES_DIR = `${paths.appSrc}/pug/pages/`;
 const PAGES = fs
@@ -10,7 +11,9 @@ const PAGES = fs
   .filter(fileName => fileName.endsWith('.pug'));
 
 module.exports = {
-  entry: ['@babel/polyfill', paths.appIndex],
+  entry: {
+    main: ['@babel/polyfill', paths.appIndex],
+  },
   module: {
     rules: [
       {
@@ -63,6 +66,16 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: `${paths.appAssets}/css/[name].[hash].css`,
     }),
+    new CopyWebpackPlugin([
+      {
+        from: `${paths.appAssets}/imgs`,
+        to: 'imgs',
+      },
+      {
+        from: `${paths.appAssets}/fonts`,
+        to: 'fonts',
+      },
+    ]),
     new CleanWebpackPlugin(),
     ...PAGES.map(
       page =>
