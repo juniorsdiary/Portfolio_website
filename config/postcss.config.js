@@ -7,11 +7,11 @@ const doiuse = require('doiuse');
 
 module.exports = {
   plugins: [
+    require('postcss-preset-env')({ stage: 0 }),
     doiuse({
-      browsers: ['ie >= 8', '> 1%'],
+      browsers: ['> 2%', 'not dead'],
       ignore: ['rem'],
     }),
-    require('postcss-preset-env')({ stage: 0 }),
     cssMqpacker({
       sort: true,
     }),

@@ -29,8 +29,8 @@ $fields: 30px;
 }
 
 @mixin row-offsets(){
-    margin-left: ($offset_one_side * -1);
-    margin-right: ($offset_one_side * -1);
+    margin-left: ($offset_one_side*-1);
+    margin-right: ($offset_one_side*-1);
 }
 
 @mixin col-offsets($type){
@@ -80,7 +80,7 @@ $fields: 30px;
 }
 
 @mixin size($n){
-    $val: 100% / $columns * $n;
+    $val: 100%/$columns*$n;
     width: #{calc(#{$val} - #{$offset})};
 }
 

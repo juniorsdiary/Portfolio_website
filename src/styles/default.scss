@@ -1,6 +1,6 @@
-*, *:before, *:after { box-sizing: border-box; }
-
-h1, h2, h3, h4, h5, h6 { margin: 0; }
+:root {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
 
 a { 
   text-decoration: none;
@@ -11,30 +11,27 @@ ul, li {
   padding: 0;
   list-style-type: none;
 }
-body {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-}
 section, .section {
-    position: relative;
-    padding: 40px 0;
-  }
+  position: relative;
+  padding: 40px 0;
+}
   
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    @include fixed-vh;
-  }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  @include fixed-vh;
+}
   
-  .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    @include fixed-vh;
-  }
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  @include fixed-vh;
+}
   
-  .container {
-    width: 100%;
-    flex: 0 0 auto;
-    position: relative;
-    margin: 0 auto;
-  }
+.container {
+  width: 100%;
+  flex: 0 0 auto;
+  position: relative;
+  margin: 0 auto;
+}

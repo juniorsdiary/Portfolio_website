@@ -1,14 +1,15 @@
 $color: white;
 $wrapper_width: 1180px;
 $mainFontSize: 18px;
+
 @function rem($pixels, $context: $mainFontSize) {
     @if (unitless($pixels)) {
-      $pixels: $pixels * 1px;
+      $pixels: $pixels*1px;
     }
     @if (unitless($context)) {
-      $context: $context * 1px;
+      $context: $context*1px;
     }
-    @return $pixels / $context * 1rem;
+    @return $pixels / $context*1rem;
   }
   
   @mixin placeholder {
@@ -45,5 +46,5 @@ $mainFontSize: 18px;
 
   @mixin fixed-vh() {
     height: 100vh; 
-    height: calc(var(--vh, 1vh) * 100);
+    height: calc(var(--vh, 1vh)*100);
   }

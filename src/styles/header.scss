@@ -1,7 +1,3 @@
-:root {
-  --display: none;
-}
-
 .header_block {
     display: flex;
     align-items: center;
@@ -15,6 +11,7 @@
 }
 
 .nav_links_set {
+  --display: none;
   display: flex;
   font-size: rem(20px);
   justify-content: space-evenly;
@@ -54,19 +51,14 @@
     z-index: 2;
   }
 }
-
 .line {
   width: 30px;
   height: 3px;
   background: white;
   margin: 3px;
 }
-
-.logo_block {}
 .logo_image {
   font-size: 2rem;
-}
-.logo_image {
   width: 100%;
   height: 100%;
 }
