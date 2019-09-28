@@ -18,9 +18,8 @@
 
 .nav_link {
   text-transform: uppercase;
-  flex: 0;
-  transition: flex 0.5s ease-in;
   margin: 0.2rem 0;
+  transition: 0.5s flex 0.5s ease-in;
   transform-style: preserve-3d;
   a {
     text-align: center;
@@ -30,7 +29,25 @@
     display: block;
     box-shadow: -20px 10px 15px -8px rgba(0,0,0,.75);
     transform: skewY(10deg) translateY(15px);
-    transition: transform 0.2s ease-in, box-shadow 0.2s ease-in;
+  }
+}
+
+.active_link {
+  flex: 1;
+  a:nth-child(n) {
+    box-shadow: none;
+    transform: skewY(10deg) translate3d(0,15px,-15px);
+    background: white;
+    transition: 0.5s transform ease-in, 0.5s box-shadow ease-in, 0.5s background 1s ease-in;
+  }
+}
+
+.inactive_link {
+  flex: 0;
+  &:nth-child(n) {
+    a {
+      transition: 0.5s transform ease-in, 0.5s box-shadow ease-in, background 0.5s ease-in;
+    }
   }
   &:nth-child(1) {
     a {
@@ -51,13 +68,5 @@
     a {
       background: $contactsBG;
     }  
-  }
-}
-
-.active_link {
-  flex: 1;
-  a {
-    box-shadow: none;
-    transform: skewY(10deg) translate3d(0,15px,-15px);
   }
 }

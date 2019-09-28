@@ -2,6 +2,10 @@
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
+body {
+  overflow: hidden;
+}
+
 a { 
   text-decoration: none;
 }
@@ -13,20 +17,18 @@ ul, li {
 }
 section, .section {
   position: relative;
-  // padding: 40px 0;
+  padding: 40px 0;
 }
   
 .wrapper {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  @include fixed-vh(100);
 }
   
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  @include fixed-vh(100);
 }
   
 .container {
@@ -34,5 +36,38 @@ section, .section {
   flex: 0 0 auto;
   position: relative;
   margin: 0 auto;
+}
+
+.page {
+  width: 100%;
   @include fixed-vh(100);
+}
+
+.anchor {
+  display: inline;
+}
+
+%painted_page {
+  transition: 0.5s background 1s ease-in;
+}
+
+.paint_page_0 {
+  @extend %painted_page;
+  background: $homeBG;
+}
+.paint_page_1 {
+  @extend %painted_page;
+  background: $aboutBG;
+}
+.paint_page_2 {
+  @extend %painted_page;
+  background: $projectsBG;
+}
+.paint_page_3 {
+  @extend %painted_page;
+  background: $contactsBG;
+}
+.clear_page {
+  transition: background 0.5s ease-in;
+  background: white;
 }

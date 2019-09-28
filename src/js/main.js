@@ -1,6 +1,3 @@
-const navLinks = document.querySelectorAll('.nav_link');
-const anchors = document.querySelectorAll('.page');
-
 function getCoords(elem) {
   let box = elem.getBoundingClientRect();
 
@@ -33,12 +30,13 @@ class Observer {
 
 const changeActiveState = (item, data) => {
   if (item === data) {
+    item.classList.remove('inactive_link');
     item.classList.add('active_link');
   } else {
     item.classList.remove('active_link');
+    item.classList.add('inactive_link');
   }
 };
-
 const scrollToAnchor = (item, _, i, index) => {
   if (i === index) {
     setTimeout(() => {
@@ -46,13 +44,23 @@ const scrollToAnchor = (item, _, i, index) => {
         top: getCoords(item).top,
         behavior: 'smooth',
       });
-    }, 100);
+    }, 500);
+
+    item.parentNode.classList.remove('clear_page');
+    item.parentNode.classList.add(`paint_page_${i}`);
+  } else {
+    item.parentNode.classList.remove(`paint_page_${i}`);
+    item.parentNode.classList.add('clear_page');
   }
 };
+const navLinks = document.querySelectorAll('.nav_link');
+const anchors = document.querySelectorAll('.anchor');
 
 const HeadObservable = new Observable();
+
 const Links = new Observer(navLinks, changeActiveState);
 const Anchors = new Observer(anchors, scrollToAnchor);
+
 HeadObservable.addObserver(Links);
 HeadObservable.addObserver(Anchors);
 
