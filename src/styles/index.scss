@@ -1,8 +1,10 @@
 @import 'smart-grid';
+@include reset();
 @import 'utilities';
 @import 'default';
 @import "header";
-@include reset();
+@import "home";
+
 
 body {
     background: $color;

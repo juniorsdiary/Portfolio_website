@@ -1,7 +1,10 @@
 $color: white;
 $wrapper_width: 1180px;
 $mainFontSize: 18px;
-
+$homeBG: rgb(231, 81, 81);
+$aboutBG: rgb(98, 165, 79);
+$projectsBG:rgb(82, 120, 208);
+$contactsBG:rgb(179, 116, 176);
 @function rem($pixels, $context: $mainFontSize) {
     @if (unitless($pixels)) {
       $pixels: $pixels*1px;
@@ -44,7 +47,11 @@ $mainFontSize: 18px;
     transform: translate(-50%, -50%);
   }
 
-  @mixin fixed-vh() {
-    height: 100vh; 
-    height: calc(var(--vh, 1vh)*100);
+  @function calcVh($value) {
+    @return 100vh;
+  }
+
+  @mixin fixed-vh($height) {
+    height: #{$height}vh;
+    height: calc(var(--vh, 1vh)*#{$height});
   }
