@@ -1,0 +1,17 @@
+$color: white;
+$wrapper_width: 1180px;
+$mainFontSize: 18px;
+$homeBG: rgb(231, 81, 81);
+$aboutBG: rgb(98, 165, 79);
+$projectsBG:rgb(82, 120, 208);
+$contactsBG:rgb(179, 116, 176);
+
+%page {
+  width: 100%;
+  @include fixed-vh(100);
+  position: absolute;
+  top: 0;
+}
+%painted_page {
+  transition: 1s clip-path 1s ease-in;
+}

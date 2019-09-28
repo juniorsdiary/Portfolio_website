@@ -1,12 +1,3 @@
-function getCoords(elem) {
-  let box = elem.getBoundingClientRect();
-
-  return {
-    top: box.top + pageYOffset,
-    left: box.left + pageXOffset,
-  };
-}
-
 class Observable {
   constructor() {
     this.observersList = [];
@@ -40,17 +31,17 @@ const changeActiveState = (item, data) => {
 const scrollToAnchor = (item, _, i, index) => {
   if (i === index) {
     setTimeout(() => {
-      window.scrollTo({
-        top: getCoords(item).top,
-        behavior: 'smooth',
-      });
+      // window.scrollTo({
+      //   top: getCoords(item).top,
+      //   behavior: 'smooth',
+      // });
     }, 500);
 
-    item.parentNode.classList.remove('clear_page');
+    item.parentNode.classList.remove(`clear_page_${i}`);
     item.parentNode.classList.add(`paint_page_${i}`);
   } else {
     item.parentNode.classList.remove(`paint_page_${i}`);
-    item.parentNode.classList.add('clear_page');
+    item.parentNode.classList.add(`clear_page_${i}`);
   }
 };
 const navLinks = document.querySelectorAll('.nav_link');
