@@ -36,13 +36,13 @@
     box-shadow: none;
     transform: skewY(10deg) translate3d(0,30px,-10px);
     background: white;
-    transition: 0.5s transform ease-in, 0.5s box-shadow ease-in, 0.75s background 1.5s ease-in;
+    transition: 0.5s transform ease-in, 0.5s box-shadow ease-in, 1s background 1s ease-in;
   }
 }
 
 .inactive_link {
   a {
-    transition: 0.5s transform 1.5s ease-in, 0.5s box-shadow 1.5s ease-in, 0.75s background 0.75s ease-in;
+    transition: 0.5s transform 1s ease-in, 0.5s box-shadow 1s ease-in, background 1s ease-in;
   }
   &:nth-child(1) {
     a {
