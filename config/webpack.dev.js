@@ -28,7 +28,6 @@ module.exports = merge(common, {
     },
   },
   devServer: {
-    // clientLogLevel: 'silent',
     compress: true,
     overlay: true,
     hot: true,

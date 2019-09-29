@@ -58,6 +58,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
+    "postcss-plugin-composition": "^0.1.1",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.18.2",
     "pug": "^2.0.4",

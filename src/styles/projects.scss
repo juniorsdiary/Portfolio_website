@@ -4,7 +4,7 @@
 }
 
 .paint_page_2 { 
-  @extend %painted_page;
+  transition: 1s clip-path 1s ease-in;
   clip-path: circle(150% at 100% 160px);
 }
 .clear_page_2 {

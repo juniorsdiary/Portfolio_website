@@ -3,7 +3,7 @@
   background: $aboutBG;
 }
 .paint_page_1 {
-  @extend %painted_page;
+  transition: 1s clip-path 1s ease-in;
   clip-path: circle(150% at 100% 110px);
 }
 .clear_page_1 {

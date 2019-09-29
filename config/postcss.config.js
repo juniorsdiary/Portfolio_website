@@ -2,12 +2,14 @@ const paths = require('./paths');
 const cssMqpacker = require('css-mqpacker');
 const cssnano = require('cssnano');
 const stylelint = require('stylelint');
-const autopref = require('autoprefixer');
+// const autoprefixer = require('autoprefixer');
 const doiuse = require('doiuse');
 
 module.exports = {
   plugins: [
-    require('postcss-preset-env')({ stage: 0 }),
+    require('postcss-plugin-composition')([
+      require('postcss-preset-env')({ stage: 4 }),
+    ]),
     doiuse({
       browsers: ['> 2%', 'not dead'],
       ignore: ['rem'],
@@ -32,6 +34,5 @@ module.exports = {
       failOnError: false,
       quiet: false,
     }),
-    autopref,
   ],
 };
