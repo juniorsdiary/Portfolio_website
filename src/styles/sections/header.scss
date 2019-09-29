@@ -1,10 +1,11 @@
 
 .navigation_block {
   position: fixed;
+  bottom: 50px;
   right: 0;
   display: flex;
-  height: 90%;
   z-index: 10;
+  animation: appear 4s ease-in;
 }
 
 .nav_links_set {
@@ -43,24 +44,34 @@
   a {
     transition: 0.5s transform 1s ease-in, 0.5s box-shadow 1s ease-in, background 1s ease-in;
   }
-  &:nth-child(1) {
-    a {
-      background: $homeBG;
+}
+
+$link_bgs: (
+  1:$homeBG,
+  2:$aboutBG,
+  3:$projectsBG,
+  4:$contactsBG
+);
+
+.inactive_link {
+  @each $number, $bg in $link_bgs {
+    &:nth-child(#{$number}) {
+      a {
+        background: $bg;
+      }
     }
-  }
-  &:nth-child(2) {
-    a {
-      background: $aboutBG;
-    }
-  }
-  &:nth-child(3) {
-    a {
-      background: $projectsBG;
-    }
-  }
-  &:nth-child(4) {
-    a {
-      background: $contactsBG;
-    }  
   }
 }
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

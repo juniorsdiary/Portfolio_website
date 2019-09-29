@@ -3,11 +3,7 @@
 @import 'utilities';
 @import "variables";
 @import 'default';
-@import "header";
-@import "home";
-@import "about";
-@import "projects";
-@import "contacts";
+@import 'sections/index';
 
 body {
     background: $color;
