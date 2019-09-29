@@ -4,10 +4,10 @@
 }
 .paint_page_0 {
   @extend %painted_page;
-  clip-path: circle(2000px at 100% 11%);
+  clip-path: circle(2000px at 100% 10%);
 }
 .clear_page_0 {
-  transition: clip-path 1s ease-in;
-  clip-path: circle(0 at 100% 11%);
+  transition: clip-path 1.5s ease-in;
+  clip-path: circle(0 at 100% 8%);
 }
 

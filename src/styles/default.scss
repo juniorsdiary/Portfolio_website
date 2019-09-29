@@ -1,21 +1,16 @@
 :root {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
-
-body {
-  overflow: hidden;
-}
 a { 
   text-decoration: none;
 }
-ul, li {
+li, ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 section, .section {
   position: relative;
-  padding: 40px 0;
 } 
 .wrapper {
   display: flex;
