@@ -1,7 +1,8 @@
 let knowMore = document.querySelector('.know_more');
+let projects = document.querySelector('.projects_ref');
 setTimeout(() => {
   knowMore.classList.add('appear');
 }, 2000);
-
-let arrow = document.querySelector('.arrow-2');
-console.log(arrow.getTotalLength());
+setTimeout(() => {
+  projects.classList.add('appear');
+}, 3000);
