@@ -25,6 +25,31 @@
   z-index: 100;
 }
 
+.know_more {
+  position: absolute;
+  top: 31%;
+  right: 280px;
+  font-family: 'Ranga', cursive;
+  font-size: rem(30px);
+  color: white;
+  opacity: 0;
+}
+
+.projects_ref {
+  font-family: 'Ranga', cursive;
+  font-size: rem(30px);
+  color: white;
+  position: absolute;
+  top: 47%;
+  right: 300px;
+  opacity: 0;
+}
+
+.appear {
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+
 
 $number-length: (
   1: 472,
@@ -57,31 +82,6 @@ $number-length: (
       }
     }
   }
-}
-
-.know_more {
-  position: absolute;
-  top: 31%;
-  right: 280px;
-  font-family: 'Ranga', cursive;
-  font-size: rem(30px);
-  color: white;
-  opacity: 0;
-}
-
-.appear {
-  opacity: 1;
-  transition: opacity 1s linear;
-}
-
-.projects_ref {
-  font-family: 'Ranga', cursive;
-  font-size: rem(30px);
-  color: white;
-  position: absolute;
-  top: 47%;
-  right: 300px;
-  opacity: 0;
 }
 
 #arrow {
