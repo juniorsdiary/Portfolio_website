@@ -34,7 +34,7 @@ module.exports = merge(common, {
     watchContentBase: true,
     contentBase: paths.appSrc,
     historyApiFallback: true,
-    noInfo: true,
+    // noInfo: true,
     open: true,
   },
   devtool: 'eval-source-map',

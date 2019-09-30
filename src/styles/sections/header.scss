@@ -1,8 +1,9 @@
 
 .navigation_block {
   position: fixed;
-  bottom: 50px;
+  bottom: 50%;
   right: 0;
+  transform: translate(0, 50%);
   display: flex;
   z-index: 10;
   animation: appear 4s ease-in;
@@ -27,14 +28,12 @@
     color: inherit;
     display: block;
     box-shadow: 9px 20px 15px -8px rgba(0,0,0,.75);
-    transform: skewY(10deg) translateY(15px);
   }
 }
 
 .active_link {
   a {
     box-shadow: none;
-    transform: skewY(10deg) translate3d(0,30px,-10px);
     background: white;
     transition: 0.5s transform ease-in, 0.5s box-shadow ease-in, 1s background 1s ease-in;
   }

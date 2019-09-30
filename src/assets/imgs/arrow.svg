@@ -1,0 +1,5 @@
+<svg id='arrow' viewBox="0 0 160 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path stroke-linecap="round" stroke-linejoin="round" class='arrow' d="M0.5 1C30.9 72.2 119.167 68 159.5 57" stroke="black"/>
+    <path stroke-linecap="round" stroke-linejoin="round" class='tail-1' d="M159 57L136.5 47" stroke="black"/>
+    <path stroke-linecap="round" stroke-linejoin="round" class='tail-2' d="M159 57L147.5 76.5" stroke="black"/>
+</svg>

@@ -65,11 +65,11 @@ module.exports = {
     new CopyWebpackPlugin([
       {
         from: `${paths.appAssets}/imgs`,
-        to: 'imgs',
+        to: './imgs',
       },
       {
         from: `${paths.appAssets}/fonts`,
-        to: 'fonts',
+        to: './fonts',
       },
     ]),
     new CleanWebpackPlugin(),

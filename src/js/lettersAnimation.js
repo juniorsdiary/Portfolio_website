@@ -1,4 +1,7 @@
-// let letters = document.querySelectorAll('#text path');
-// [...letters].forEach(item => console.log(item.getTotalLength()))
-let ul = document.querySelector('.options');
-window.onload = () => ul.classList.add('appear');
+let knowMore = document.querySelector('.know_more');
+setTimeout(() => {
+  knowMore.classList.add('appear');
+}, 2000);
+
+let arrow = document.querySelector('.arrow-2');
+console.log(arrow.getTotalLength());

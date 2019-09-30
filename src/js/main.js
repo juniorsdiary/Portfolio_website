@@ -30,30 +30,23 @@ const changeActiveState = (item, data) => {
 };
 const scrollToAnchor = (item, _, i, index) => {
   if (i === index) {
-    setTimeout(() => {
-      // window.scrollTo({
-      //   top: getCoords(item).top,
-      //   behavior: 'smooth',
-      // });
-    }, 500);
-
-    item.parentNode.classList.remove(`clear_page_${i}`);
-    item.parentNode.classList.add(`paint_page_${i}`);
+    item.classList.remove(`clear_page_${i}`);
+    item.classList.add(`paint_page_${i}`);
   } else {
-    item.parentNode.classList.remove(`paint_page_${i}`);
-    item.parentNode.classList.add(`clear_page_${i}`);
+    item.classList.remove(`paint_page_${i}`);
+    item.classList.add(`clear_page_${i}`);
   }
 };
 const navLinks = document.querySelectorAll('.nav_link');
-const anchors = document.querySelectorAll('.anchor');
+const pages = document.querySelectorAll('.page');
 
 const HeadObservable = new Observable();
 
 const Links = new Observer(navLinks, changeActiveState);
-const Anchors = new Observer(anchors, scrollToAnchor);
+const Pages = new Observer(pages, scrollToAnchor);
 
 HeadObservable.addObserver(Links);
-HeadObservable.addObserver(Anchors);
+HeadObservable.addObserver(Pages);
 
 [...navLinks].forEach((item, i) =>
   item.addEventListener(
