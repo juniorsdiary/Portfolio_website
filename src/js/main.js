@@ -1,23 +1,5 @@
-class Observable {
-  constructor() {
-    this.observersList = [];
-  }
-  update(elem, index) {
-    this.observersList.forEach(item => item.notify(elem, index));
-  }
-  addObserver(obs) {
-    this.observersList.push(obs);
-  }
-}
-class Observer {
-  constructor(elements, behavior) {
-    this.elements = elements;
-    this.behavior = behavior;
-  }
-  notify(data, index) {
-    this.elements.forEach((item, i) => this.behavior(item, data, i, index));
-  }
-}
+import Observer from './Observer'
+import Observable from './Observable'
 
 const changeActiveState = (item, data) => {
   if (item === data) {

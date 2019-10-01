@@ -1,2 +1,2 @@
-import './main.js';
+import './main';
 import './lettersAnimation';

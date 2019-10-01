@@ -1,19 +1,21 @@
-// const paths = require('./paths');
-const cssMqpacker = require('css-mqpacker');
+const cssMQPacker = require('css-mqpacker');
 const cssnano = require('cssnano');
-// const stylelint = require('stylelint');
-// const doiuse = require('doiuse');
+const stylelint = require('stylelint');
+const doIUse = require('doiuse');
+const presetCss = require('postcss-preset-env')
+const compose = require('postcss-plugin-composition')
+const paths = require('./paths');
 
 module.exports = {
   plugins: [
-    require('postcss-plugin-composition')([
-      require('postcss-preset-env')({ stage: 4 }),
+    compose([
+      presetCss({ stage: 4 }),
     ]),
-    // doiuse({
-    //   browsers: ['> 2%', 'not dead'],
-    //   ignore: ['rem'],
-    // }),
-    cssMqpacker({
+    doIUse({
+      browsers: ['> 2%', 'not dead'],
+      ignore: ['rem'],
+    }),
+    cssMQPacker({
       sort: true,
     }),
     cssnano({
@@ -26,12 +28,12 @@ module.exports = {
         },
       ],
     }),
-    // stylelint({
-    //   configFile: `${paths.appConfig}/stylelint.config.js`,
-    //   context: paths.appSrc,
-    //   files: '**/*.css',
-    //   failOnError: false,
-    //   quiet: false,
-    // }),
+    stylelint({
+      configFile: `${paths.appConfig}/stylelint.config.js`,
+      context: paths.appSrc,
+      files: '**/*.css',
+      failOnError: false,
+      quiet: false,
+    }),
   ],
 };
