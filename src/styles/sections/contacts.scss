@@ -3,11 +3,11 @@
   background: $contactsBG;
 }
 
-.paint_page_3 {
+.paint_page_4 {
   transition: 1s clip-path 1s ease-in;
-  clip-path: circle(150% at 100% 210px);
+  clip-path: circle(150% at 100% 460px);
 }
-.clear_page_3 {
+.clear_page_4 {
   transition: clip-path 1s ease-in;
-  clip-path: circle(0 at 100% 210px);
+  clip-path: circle(0 at 100% 460px);
 }

@@ -3,45 +3,34 @@
   background: url('../assets/imgs/desk.png') no-repeat;
   background-size: cover;
   align-items: center;
+  @include md-block {
+    position: absolute;
+  }
 }
 
 .paint_page_0 {
   transition: 1s clip-path 1s ease-in;
-  clip-path: circle(150% at 100% 60px);
+  clip-path: circle(150% at 100% 272px);
 }
 
 .clear_page_0 {
   transition: clip-path 1s ease-in;
-  clip-path: circle(0 at 100% 60px);
+  clip-path: circle(0 at 100% 272px);
 }
 
 .title_text {
   position: relative;
-  font-family: 'Ranga', cursive;
   font-size: rem(30px);
   color: white;
-  margin: 2rem 0;
-  animation: appear 2s linear;
+  margin: 1rem auto;
   z-index: 100;
-}
-
-.know_more {
-  position: absolute;
-  top: 31%;
-  right: 280px;
-  font-family: 'Ranga', cursive;
-  font-size: rem(30px);
-  color: white;
   opacity: 0;
 }
 
-.projects_ref {
-  font-family: 'Ranga', cursive;
-  font-size: rem(30px);
+.description {
+  font-size: rem(29px);
+  margin: 0.2em;
   color: white;
-  position: absolute;
-  top: 47%;
-  right: 300px;
   opacity: 0;
 }
 
@@ -50,127 +39,6 @@
   transition: opacity 1s linear;
 }
 
-
-$number-length: (
-  1: 472,
-  2: 395,
-  3: 278,
-  4: 278,
-  5: 438,
-  6: 677,
-  7: 438,
-  8: 462,
-  9: 278,
-  10: 460
-);
-
-#welcome {
-  position: relative;
-  display: block;
-  @include size(10);
-  height: 90px;
-  margin: 1rem auto;
-  animation: 0.5s fill 3s linear forwards;
-  z-index: 100;
-
-  path {
-    @each $number, $length in $number-length {
-      &:nth-child(#{$number}) {
-        stroke-dasharray: #{$length};
-        stroke-dashoffset: #{$length};
-        animation: line-anim 1s linear forwards calc(#{$number}*0.2s);
-      }
-    }
-  }
-}
-
-#arrow {
-  position: absolute;
-  width: 201px;
-  height: 90px;
-  top: 37%;
-  right: 120px;
-
-  path {
-    stroke-width: 3;
-    stroke: white; 
-    fill: none;
-    animation: 1s draw ease-in-out forwards;
-  }
-  .arrow {  
-    stroke-dasharray: 184;
-    stroke-dashoffset: 184; 
-    animation-delay: 2s;
-  }
-  .tail-1 {
-    stroke-dasharray: 25;
-    stroke-dashoffset: 25;
-    animation-delay: 2.5s;
-  }
-  .tail-2 {
-    stroke-dasharray: 25;
-    stroke-dashoffset: 25;
-    animation-delay: 2.7s;
-  }
-}
-
-#arrow-2 {
-  position: absolute;
-  width: 201px;
-  height: 90px;
-  top: 50%;
-  right: 120px;
-  transform: rotate(10deg);
-  path {
-    stroke-width: 3;
-    stroke: white; 
-    fill: none;
-    animation: 1s draw ease-in-out forwards;
-  }
-  .arrow-2 {
-    stroke-dasharray: 241;
-    stroke-dashoffset: 241; 
-    animation-delay: 3s;
-  }
-  .tail-3 {
-    stroke-dasharray: 32;
-    stroke-dashoffset: 32;
-    animation-delay: 3.5s;
-  }
-  .tail-4 {
-    stroke-dasharray: 32;
-    stroke-dashoffset: 32;
-    animation-delay: 3.7s;
-  }
-}
-
-
-@keyframes draw {
- to {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes line-anim {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes appear {
-from {
-  opacity: 0;
-}
-to {
-  opacity: 1;
-}
-}
-@keyframes fill {
-  from {
-    fill: transparent;
-  }
-  to {
-    fill: white;
-  }
-}
 
 
 

@@ -1,9 +1,8 @@
 
 .navigation_block {
   position: fixed;
-  bottom: 50%;
+  bottom: 0px;
   right: 0;
-  transform: translate(0, 50%);
   display: flex;
   z-index: 10;
   animation: appear 4s ease-in;
@@ -12,19 +11,15 @@
 .nav_links_set {
   display: flex;
   flex-direction: column;
-  font-size: rem(20px);
-  perspective: 1000px;
-  transform-style: preserve-3d;
 }
 
 .nav_link {
-  text-transform: uppercase;
-  margin: 0.5rem 0;
-  transform-style: preserve-3d;
+  margin: 0.3rem 0;
   a {
+    font-size: 28px;
     text-align: center;
     border-radius: 10px 0 0 10px;
-    padding: 0.3rem 0.5rem;
+    padding: 0 0.5rem;
     color: inherit;
     display: block;
     box-shadow: 9px 20px 15px -8px rgba(0,0,0,.75);
@@ -49,7 +44,8 @@ $link_bgs: (
   1:$homeBG,
   2:$aboutBG,
   3:$projectsBG,
-  4:$contactsBG
+  4:$skillsBG,
+  5:$contactsBG
 );
 
 .inactive_link {

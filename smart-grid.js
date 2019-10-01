@@ -1,11 +1,11 @@
-var smartgrid = require('smart-grid');
+const smartgrid = require('smart-grid');
 
 /* It's principal settings in smart grid project */
-var settings = {
+const settings = {
   outputStyle: 'scss',
   columns: 12 /* number of grid columns */,
   offset: '0.5rem' /* gutter width px || % || rem */,
-  mobileFirst: false /* mobileFirst ? 'min-width' : 'max-width' */,
+  mobileFirst: true /* mobileFirst ? 'min-width' : 'max-width' */,
   container: {
     maxWidth: '1520px' /* max-width оn very large screen */,
     fields: '30px' /* side fields */,

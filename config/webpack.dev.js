@@ -1,6 +1,6 @@
-const paths = require('./paths');
 const merge = require('webpack-merge');
 const common = require('./webpack.config.js');
+const paths = require('./paths');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -34,7 +34,6 @@ module.exports = merge(common, {
     watchContentBase: true,
     contentBase: paths.appSrc,
     historyApiFallback: true,
-    // noInfo: true,
     open: true,
   },
   devtool: 'eval-source-map',

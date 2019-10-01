@@ -1,8 +1,12 @@
-const knowMore = document.querySelector('.know_more');
-const projects = document.querySelector('.projects_ref');
+const texts = document.querySelectorAll('.description');
+const title = document.querySelector('.title_text');
 setTimeout(() => {
-  knowMore.classList.add('appear');
-}, 2000);
-setTimeout(() => {
-  projects.classList.add('appear');
-}, 3000);
+  title.classList.add('appear');
+}, 1000);
+[...texts].forEach((item, i) => {
+  setTimeout(() => {
+    item.classList.add('appear');
+  }, (i+2)*1000)
+})
+
+

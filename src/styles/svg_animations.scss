@@ -1,0 +1,91 @@
+$number-length: (
+  1: 472,
+  2: 395,
+  3: 278,
+  4: 278,
+  5: 438,
+  6: 677,
+  7: 438,
+  8: 462,
+  9: 278,
+  10: 460
+);
+
+#welcome {
+  position: relative;
+  display: block;
+  @include size(10);
+  height: 90px;
+  margin: 1rem auto;
+  animation: 0.5s fill 3s linear forwards;
+  z-index: 100;
+
+  path {
+    stroke: $title-color;
+    @each $number, $length in $number-length {
+      &:nth-child(#{$number}) {
+        stroke-dasharray: #{$length};
+        stroke-dashoffset: #{$length};
+        animation: draw 1s linear forwards calc(#{$number}*0.2s);
+      }
+    }
+  }
+}
+
+$tic-toe-data: (
+ 1:120,
+ 2:120,
+ 3:120,
+ 4:120,
+ 5:91,
+ 6:37,
+ 7:37,
+ 8:91,
+ 9:37,
+ 10:37,
+ 11:91,
+ 12:37,
+ 13:37,
+ 14:91,
+ 15:151,
+);
+
+#tic-toe {
+  position: absolute;
+  bottom: 50px;
+  left: 25px;
+  width: 58%;
+  height: 24%;
+  @include md-block {
+    height: 36%;
+    width: 22%;
+    top: 54%;
+    left: 5%;
+  }
+  transform: rotate(-15deg);
+  path, circle {
+    stroke: $stroke-color;
+    stroke-width: 2;
+  }
+  @each $i, $length in $tic-toe-data {
+    *:nth-child(#{$i}) {
+      stroke-dasharray: #{$length};
+      stroke-dashoffset: #{$length};
+      animation: draw 0.5s linear forwards calc(#{$i}*0.5s);
+    }
+  }
+}
+
+@keyframes draw {
+ to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: $title-color;
+  }
+}

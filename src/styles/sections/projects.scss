@@ -5,9 +5,9 @@
 
 .paint_page_2 { 
   transition: 1s clip-path 1s ease-in;
-  clip-path: circle(150% at 100% 160px);
+  clip-path: circle(150% at 100% 355px);
 }
 .clear_page_2 {
   transition: clip-path 1s ease-in;
-  clip-path: circle(0 at 100% 160px);
+  clip-path: circle(0 at 100% 355px);
 }
