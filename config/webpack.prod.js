@@ -31,7 +31,7 @@ module.exports = merge(common, {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: true } },
+          { loader: 'css-loader' },
           {
             loader: 'postcss-loader',
             options: {
@@ -41,14 +41,14 @@ module.exports = merge(common, {
               },
             },
           },
-          { loader: 'sass-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader' },
         ],
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${paths.appAssets}/css/[name].[hash].css`,
+      filename: './css/[name].[hash].css',
     }),
   ],
 });
