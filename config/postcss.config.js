@@ -2,7 +2,6 @@
 const cssMqpacker = require('css-mqpacker');
 const cssnano = require('cssnano');
 // const stylelint = require('stylelint');
-// const autoprefixer = require('autoprefixer');
 // const doiuse = require('doiuse');
 
 module.exports = {
