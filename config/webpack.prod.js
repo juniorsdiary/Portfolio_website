@@ -1,7 +1,6 @@
 const merge = require('webpack-merge');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const common = require('./webpack.config.js');
 const paths = require('./paths');
@@ -27,27 +26,6 @@ module.exports = merge(common, {
     },
     minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
   },
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          { loader: 'css-loader' },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              config: {
-                path: `${paths.appConfig}/postcss.config.js`,
-              },
-            },
-          },
-          { loader: 'sass-loader' },
-        ],
-      },
-    ],
-  },
   plugins: [
     new CompressionPlugin({
       test: /\.js$|\.css$|\.html$/,
@@ -55,8 +33,5 @@ module.exports = merge(common, {
       minRatio: 0.8,
     }),
     // new BundleAnalyzerPlugin(),
-    new MiniCssExtractPlugin({
-      filename: './css/[name].[hash].css',
-    }),
   ],
 });

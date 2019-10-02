@@ -1,17 +1,16 @@
-const paths = require('./paths');
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const paths = require('./paths');
 
 const PAGES_DIR = `${paths.appSrc}/pug/pages/`;
 const PAGES = fs
   .readdirSync(PAGES_DIR)
   .filter(fileName => fileName.endsWith('.pug'));
-
+  
 module.exports = {
-  entry: {
-    main: ['@babel/polyfill', paths.appSrc],
-  },
+  entry: ['@babel/polyfill', paths.appSrc],
   module: {
     rules: [
       {
@@ -58,10 +57,34 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.scss|css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+            }
+          },
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true }
+          }, {
+            loader: 'postcss-loader',
+            options: { sourceMap: true, config: { path: `${paths.appConfig}/postcss.config.js` } }
+          }, {
+            loader: 'sass-loader',
+            options: { sourceMap: true }
+          }
+        ]
+      }
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: './css/[name].[hash].css',
+    }),
     ...PAGES.map(
       page =>
         new HtmlWebpackPlugin({
