@@ -10,3 +10,66 @@
   transition: clip-path 1s ease-in;
   clip-path: circle(0 at 100% 595px);
 }
+
+.project_block {
+  @include size(11);
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.project_block__project_item {
+  @include size(6);
+  margin: 0.5rem 0;
+  background: #9dfab9;
+  border-radius: 5px;
+}
+
+.project_item-1__name {
+  font-size: rem(30px);
+  text-align: center;
+  padding: 0.5rem 0 0 0;
+}
+.project_item__links {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: rem(25px);
+  padding: 0 0 0.5rem 0;
+  a {
+    color: black;
+  }
+}
+.repo_link {
+  background: url($gh_icon) no-repeat;
+  background-size: contain;
+  padding: 1rem;
+}
+
+%image_templ {
+  @include size(11);
+  padding-top: 100%;
+}
+.project_item__image-1 {
+  @include adaptive_bg($marvel);
+  background-position: center;
+  @extend %image_templ;
+}
+.project_item__image-2 {
+  @include adaptive_bg($github);
+  background-position: center;
+  @extend %image_templ;
+}
+.project_item__image-3 {
+  @include adaptive_bg($tetris);
+  background-position: center;
+  @extend %image_templ;
+}
+.project_item__image-4 {
+  @include adaptive_bg($durak);
+  background-position: center;
+  @extend %image_templ;
+}

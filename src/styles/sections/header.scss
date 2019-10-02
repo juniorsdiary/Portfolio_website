@@ -1,16 +1,24 @@
 
 .navigation_block {
-  position: fixed;
-  bottom: 50px;
+  position: absolute;
+  bottom: 0;
   right: 0;
   display: flex;
+  width: 100%;
   z-index: 10;
   animation: appear 4s ease-in;
+  @include sm-block {
+    bottom: 50px;
+  }
 }
 
 .nav_links_set {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  @include sm-block {
+    flex-direction: column;
+  }
 }
 
 .nav_link {
@@ -18,7 +26,7 @@
   a {
     font-size: 28px;
     text-align: center;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px;
     padding: 0 0.5rem;
     color: inherit;
     display: block;
