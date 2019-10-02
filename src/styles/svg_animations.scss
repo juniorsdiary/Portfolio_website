@@ -75,6 +75,55 @@ $tic-toe-data: (
     }
   }
 }
+$object-data: (
+  1: 60,
+  2: 60,
+  3: 20,
+  4: 20,
+  5: 20,
+  6: 20,
+  7: 20,
+  8: 20,
+  9: 20,
+  10: 20,
+  11: 20,
+  12: 20,
+  13: 15,
+  14: 15,
+  15: 15,
+  16: 15,
+  17: 15,
+  18: 15,
+  19: 15,
+  20: 15,
+  21: 20,
+  22: 20, 
+  23: 20,
+  24: 20,
+  25: 20,
+);
+#object {
+  width: 50%;
+  height: 25%;
+  position: absolute;
+  bottom: 80px;
+  left: 40px;
+  @include bg-block {
+    width: 13%;
+  }
+  path, circle {
+    stroke: $stroke-color;
+    stroke-width: 1;
+  }
+
+  @each $i, $length in $object-data {
+    *:nth-child(#{$i}) {
+      stroke-dasharray: #{$length};
+      stroke-dashoffset: #{$length};
+      animation: draw 0.3s linear forwards calc(#{$i}*0.3s);
+    }
+  }
+}
 
 @keyframes draw {
  to {
