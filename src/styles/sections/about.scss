@@ -1,12 +1,12 @@
 .about {
   @extend %page;
-  background: $aboutBG;
+  
 }
 .paint_page_1 {
   transition: 1s clip-path 1s ease-in;
-  clip-path: circle(150% at 100% 310px);
+  clip-path: circle(150% at 100% 550px);
 }
 .clear_page_1 {
   transition: clip-path 1s ease-in;
-  clip-path: circle(0px at 100% 310px);
+  clip-path: circle(0px at 100% 550px);
 }

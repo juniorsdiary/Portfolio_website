@@ -7,5 +7,11 @@
 @import 'sections/index';
 
 body {
-    background: $color;
+    width: 100%;
+    height: 100vh;
+    background: url('../assets/imgs/desk.png') no-repeat;
+    background-size: cover;
+    @media only screen and (max-device-width: 420px) {
+        @include fixed-vh(100);
+    }
 }
