@@ -4,11 +4,11 @@
 
 .paint_page_2 { 
   transition: 1s clip-path 1s ease-in;
-  clip-path: circle(150% at 100% 595px);
+  clip-path: circle(150% at 100% 100%);
 }
 .clear_page_2 {
   transition: clip-path 1s ease-in;
-  clip-path: circle(0 at 100% 595px);
+  clip-path: circle(0 at 100% 100%);
 }
 
 .project_block {
@@ -41,6 +41,7 @@
   padding: 0 0 0.5rem 0;
   a {
     color: black;
+    text-decoration: underline;
   }
 }
 .repo_link {
@@ -49,27 +50,31 @@
   padding: 1rem;
 }
 
-%image_templ {
+%image_template {
   @include size(11);
   padding-top: 100%;
 }
+
 .project_item__image-1 {
   @include adaptive_bg($marvel);
   background-position: center;
-  @extend %image_templ;
+  @extend %image_template;
 }
+
 .project_item__image-2 {
   @include adaptive_bg($github);
   background-position: center;
-  @extend %image_templ;
+  @extend %image_template;
 }
+
 .project_item__image-3 {
   @include adaptive_bg($tetris);
   background-position: center;
-  @extend %image_templ;
+  @extend %image_template;
 }
+
 .project_item__image-4 {
   @include adaptive_bg($durak);
   background-position: center;
-  @extend %image_templ;
+  @extend %image_template;
 }

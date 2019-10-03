@@ -3,11 +3,11 @@
 }
 .paint_page_1 {
   transition: 1s clip-path 1s ease-in;
-  clip-path: circle(150% at 100% 550px);
+  clip-path: circle(150% at 100% 100%);
 }
 .clear_page_1 {
   transition: clip-path 1s ease-in;
-  clip-path: circle(0px at 100% 550px);
+  clip-path: circle(0px at 100% 100%);
 }
 
 .description_block {
