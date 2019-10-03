@@ -6,9 +6,8 @@
   display: flex;
   width: 100%;
   z-index: 10;
-  animation: appear 4s ease-in;
   @include sm-block {
-    bottom: 50px;
+
   }
 }
 
@@ -17,12 +16,12 @@
   justify-content: space-evenly;
   width: 100%;
   @include sm-block {
-    flex-direction: column;
+    justify-content: center;
   }
 }
 
 .nav_link {
-  margin: 0.3rem 0;
+  margin: 0.5rem;
   a {
     font-size: 28px;
     text-align: center;

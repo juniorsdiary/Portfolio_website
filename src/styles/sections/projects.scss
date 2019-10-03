@@ -1,29 +1,26 @@
-.projects {
+.projects_page {
   @extend %page;
-}
-
-.paint_page_2 { 
   transition: 1s clip-path 1s ease-in;
   clip-path: circle(150% at 100% 100%);
 }
-.clear_page_2 {
-  transition: clip-path 1s ease-in;
-  clip-path: circle(0 at 100% 100%);
-}
 
 .project_block {
-  @include size(11);
-  padding: 1rem;
-  margin: 0 auto;
+  @include size(12);
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-around;
+  @include sm-block {
+    justify-content: center;
+  }
 }
 
 .project_block__project_item {
-  @include size(6);
-  margin: 0.5rem 0;
+  @include size(5);
+  @include size-sm(4);
+  @include size-md(3);
+  @include size-bg(2);
+  margin: 1rem;
   background: #9dfab9;
   border-radius: 5px;
 }
@@ -51,8 +48,13 @@
 }
 
 %image_template {
-  @include size(11);
   padding-top: 100%;
+  @include sm-block {
+    padding-top: 85%;
+  }
+  @include md-block {
+    // padding-top: 75%;
+  }
 }
 
 .project_item__image-1 {

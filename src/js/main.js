@@ -10,17 +10,19 @@ const changeActiveState = (item, data) => {
     item.classList.add('inactive_link');
   }
 };
-const scrollToAnchor = (item, _, i, index) => {
+const scrollToAnchor = (item, data, i, index) => {
+  if (!item.classList.contains('activated')) {
+    item.classList.add(`activated`);
+  }
   if (i === index) {
-    item.classList.remove(`clear_page_${i}`);
-    item.classList.add(`paint_page_${i}`);
+    item.classList.remove(`clear_page`);
   } else {
-    item.classList.remove(`paint_page_${i}`);
-    item.classList.add(`clear_page_${i}`);
+    item.classList.add(`clear_page`);
   }
 };
+
 const navLinks = document.querySelectorAll('.nav_link');
-const pages = document.querySelectorAll('.page');
+const pages = document.querySelectorAll('section');
 
 const HeadObservable = new Observable();
 
