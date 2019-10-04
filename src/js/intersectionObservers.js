@@ -1,8 +1,8 @@
 const images = [
-  './imgs/marvel.jpeg',
-  './imgs/github.jpeg',
-  './imgs/tetris.jpeg',
-  './imgs/durak-online.jpeg'
+  './imgs/marvel.png',
+  './imgs/github.png',
+  './imgs/tetris.png',
+  './imgs/durak-online.png'
 ];
 const projects = document.querySelectorAll('.project_block__project_item');
 const options = {
