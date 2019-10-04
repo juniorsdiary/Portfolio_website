@@ -13,7 +13,7 @@ const options = {
 
 function callback(entries) { 
   entries.forEach((entry) => {
-    if (entry.isIntersecting) {
+    if (entry.isIntersecting && !entry.target.classList.contains('fade_in')) {
       const index = [...projects].findIndex(item => item === entry.target)
       const imageElement = entry.target.firstElementChild.firstElementChild;
       imageElement.src = images[index];

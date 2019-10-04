@@ -1,11 +1,12 @@
-// .skills_page {
-// }
+.skills_page {
+  background: $skillsBG;
+  color: black;
+}
 
 .skills_block {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: white;
   font-size: rem(28px);
 }
 
@@ -22,7 +23,7 @@
       top: 0;
       width: 100%;
       height: 2px;
-      background: white;
+      background: black;
     }
   }
 }

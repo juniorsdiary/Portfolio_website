@@ -7,38 +7,22 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  @include sm-block {
-    justify-content: center;
-  }
 }
 
 .project_block__project_item {
   position: relative;
   @include size(9);
-  @include size-bg(4);
+  @include size-bg(6);
   margin: 1rem;
-  color: white;
+  color: black;
+  background: #9dfab9;
   opacity: 0;
   transform: translate(-100%, 0);
   transition: opacity 1s linear, transform 0.5s linear;
-  @include bg-block {
-    color: black;
-    &:hover {
-      > .project_item_description {
-        top: 100%;
-      }
-      > .project_block_image_wrapper .project_item__image {
-        transform: scale(1.2);
-      }
-      > .project_block_details {
-        opacity: 1;
-      }
-    }
-  }
 }
 .project_block_image_wrapper {
   position: relative;
-  padding-top: 40%;
+  padding-top: 48%;
 }
 .project_item__image {
   position: absolute;
@@ -46,7 +30,7 @@
   top: 0;
   @include size(12);
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top center;
   transition: transform 0.2s linear;
 }
@@ -54,10 +38,7 @@
 .project_item_description {
   position: relative;
   font-size: rem(25px);
-  @include bg-block {
-    background: #9dfab9;
-    transition: top 0.5s linear;
-  }
+  padding: 0.5rem 1rem;
 }
 
 .project_block_details {
@@ -69,26 +50,18 @@
   align-items: center;
   justify-content: space-evenly;
   font-size: rem(25px);
+  padding: 0.5rem 0;
   a {
     color: inherit;
     text-decoration: underline;
-  }
-  @include bg-block {
-    width: 100%;
-    position: absolute;
-    flex-direction: column;
-    height: 100%;
-    opacity: 1;
-    transition: opacity 0.2s linear;
   }
 }
 .project_item_title {
   font-size: rem(30px);
   text-align: center;
-  padding-top: 0.5rem;
 }
 #gh-logo {
-  fill: white;
+  fill: black;
   width: 32px;
   height: 32px;
 }
