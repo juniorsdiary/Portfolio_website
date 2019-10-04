@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebPackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+
 const paths = require('./paths');
 
 const PAGES_DIR = `${paths.appSrc}/pug/pages/`;
@@ -36,9 +38,6 @@ module.exports = {
               name: '[name].[ext]',
               outputPath: 'imgs',
             },
-          },
-          {
-            loader: 'image-webpack-loader',
           },
         ],
       },
@@ -78,6 +77,15 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new CopyWebPackPlugin([{from: `${paths.appAssets}/imgs`, to: './imgs'}]),
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      optipng: {
+        optimizationLevel: 9
+      },
+      jpegtran: {
+        progressive: true
+      }
+    }),
     new MiniCssExtractPlugin({
       filename: './css/[name].[hash].css',
     }),
