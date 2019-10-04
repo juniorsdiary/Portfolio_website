@@ -40,7 +40,7 @@ module.exports = {
             loader: 'image-webpack-loader',
             options: {
               pngquant: {
-                quality: '70',
+                quality: '90',
                 speed: 4,
               },
             },

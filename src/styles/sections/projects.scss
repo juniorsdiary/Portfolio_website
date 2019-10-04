@@ -18,7 +18,10 @@
   @include size-bg(4);
   margin: 1rem;
   color: white;
-   @include bg-block {
+  opacity: 0;
+  transform: translate(-100%, 0);
+  transition: opacity 1s linear, transform 0.5s linear;
+  @include bg-block {
     color: black;
     &:hover {
       > .project_item_description {
@@ -90,3 +93,7 @@
   height: 32px;
 }
 
+.fade_in {
+  opacity: 1;
+  transform: translate(0);
+}

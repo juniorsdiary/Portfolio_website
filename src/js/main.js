@@ -14,12 +14,9 @@ const changeActiveState = (item, data) => {
 const scrollToAnchor = (item, data, i, index) => {
   
   if (i === index) {
-    // if (!/activated/.test(item.classList.value)) {
-    //   item.classList.add(`activated_${item.firstElementChild.textContent}`);
-    // }
-    item.classList.remove(`clear_page`);
+    // item.classList.remove(`clear_page`);
   } else {
-    item.classList.add(`clear_page`);
+    // item.classList.add(`clear_page`);
   }
 };
 

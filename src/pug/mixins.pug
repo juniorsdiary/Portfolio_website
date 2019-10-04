@@ -1,7 +1,7 @@
 mixin project_card(title, imageSrc, description, web_link, git_link)
   .project_block__project_item
     .project_block_image_wrapper
-      img(src=(imageSrc) class='project_item__image')
+      img(class='project_item__image')
     .project_block_details
       p.project_item_title=title
       a(href=web_link target='blank')='Web-page'
