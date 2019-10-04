@@ -2,6 +2,7 @@ const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebPackPlugin = require('copy-webpack-plugin');
 const paths = require('./paths');
 
 const PAGES_DIR = `${paths.appSrc}/pug/pages/`;
@@ -76,6 +77,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new CopyWebPackPlugin([{from: `${paths.appAssets}/imgs`, to: './imgs'}]),
     new MiniCssExtractPlugin({
       filename: './css/[name].[hash].css',
     }),
