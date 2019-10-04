@@ -10,11 +10,13 @@ const changeActiveState = (item, data) => {
     item.classList.add('inactive_link');
   }
 };
+
 const scrollToAnchor = (item, data, i, index) => {
-  if (!item.classList.contains('activated')) {
-    item.classList.add(`activated`);
-  }
+  
   if (i === index) {
+    // if (!/activated/.test(item.classList.value)) {
+    //   item.classList.add(`activated_${item.firstElementChild.textContent}`);
+    // }
     item.classList.remove(`clear_page`);
   } else {
     item.classList.add(`clear_page`);

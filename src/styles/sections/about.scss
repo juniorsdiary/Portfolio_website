@@ -1,8 +1,7 @@
 .about_page {
-  @extend %page;
-  transition: 1s clip-path 1s ease-in;
-  clip-path: circle(150% at 100% 100%);
+  background: $aboutBG;
 }
+
 .description_block {
   display: flex;
   flex-direction: column;
@@ -14,14 +13,4 @@
     text-align: center;
     padding: 0.2rem;
   }
-}
-
-#sheet {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  fill: #9de9c3;
-  width: 88%;
-  height: 50%;
 }

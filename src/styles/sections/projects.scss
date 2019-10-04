@@ -1,14 +1,11 @@
-.projects_page {
-  @extend %page;
-  transition: 1s clip-path 1s ease-in;
-  clip-path: circle(150% at 100% 100%);
-}
+// .projects_page {
+// }
 
 .project_block {
   @include size(12);
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
   justify-content: space-around;
   @include sm-block {
     justify-content: center;
@@ -16,67 +13,80 @@
 }
 
 .project_block__project_item {
-  @include size(5);
-  @include size-sm(4);
-  @include size-md(3);
-  @include size-bg(2);
+  position: relative;
+  @include size(9);
+  @include size-bg(4);
   margin: 1rem;
-  background: #9dfab9;
-  border-radius: 5px;
+  color: white;
+   @include bg-block {
+    color: black;
+    &:hover {
+      > .project_item_description {
+        top: 100%;
+      }
+      > .project_block_image_wrapper .project_item__image {
+        transform: scale(1.2);
+      }
+      > .project_block_details {
+        opacity: 1;
+      }
+    }
+  }
+}
+.project_block_image_wrapper {
+  position: relative;
+  padding-top: 40%;
+}
+.project_item__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  @include size(12);
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.2s linear;
 }
 
-.project_item-1__name {
-  font-size: rem(30px);
-  text-align: center;
-  padding: 0.5rem 0 0 0;
-}
-.project_item__links {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+.project_item_description {
+  position: relative;
   font-size: rem(25px);
-  padding: 0 0 0.5rem 0;
+  @include bg-block {
+    background: #9dfab9;
+    transition: top 0.5s linear;
+  }
+}
+
+.project_block_details {
+  @include size(12);
+  position: relative;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: rem(25px);
   a {
-    color: black;
+    color: inherit;
     text-decoration: underline;
   }
-}
-.repo_link {
-  background: url($gh_icon) no-repeat;
-  background-size: contain;
-  padding: 1rem;
-}
-
-%image_template {
-  padding-top: 100%;
-  @include sm-block {
-    padding-top: 85%;
-  }
-  @include md-block {
-    // padding-top: 75%;
+  @include bg-block {
+    width: 100%;
+    position: absolute;
+    flex-direction: column;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.2s linear;
   }
 }
-
-.project_item__image-1 {
-  @include adaptive_bg($marvel);
-  background-position: center;
-  @extend %image_template;
+.project_item_title {
+  font-size: rem(30px);
+  text-align: center;
+  padding-top: 0.5rem;
+}
+#gh-logo {
+  fill: white;
+  width: 32px;
+  height: 32px;
 }
 
-.project_item__image-2 {
-  @include adaptive_bg($github);
-  background-position: center;
-  @extend %image_template;
-}
-
-.project_item__image-3 {
-  @include adaptive_bg($tetris);
-  background-position: center;
-  @extend %image_template;
-}
-
-.project_item__image-4 {
-  @include adaptive_bg($durak);
-  background-position: center;
-  @extend %image_template;
-}

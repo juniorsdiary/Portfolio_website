@@ -1,3 +1,5 @@
+include ../mixins
+
 doctype html
 html(lang='en')
   head
@@ -6,10 +8,11 @@ html(lang='en')
     meta(name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0")
     title='Hello, Eva'
     link(href="https://fonts.googleapis.com/css?family=Ranga&display=swap" rel="stylesheet")
-  body
+  body.content-wrapper
     include ../modules/header
-    include ../layout/home
-    include ../layout/about
-    include ../layout/projects
-    include ../layout/skills
-    include ../layout/contacts
+    main.main_content
+      include ../layout/home
+      include ../layout/about
+      include ../layout/projects
+      include ../layout/skills
+      include ../layout/contacts

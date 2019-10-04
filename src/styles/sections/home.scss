@@ -1,11 +1,6 @@
 .home_page {
-  @extend %page;
   align-items: center;
-  @include md-block {
-    position: absolute;
-  }
-  transition: 1s clip-path 1s ease-in;
-  clip-path: circle(150% at 100% 100%);
+  height: 100vh;
 }
 
 .title_text {

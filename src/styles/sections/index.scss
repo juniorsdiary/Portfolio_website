@@ -5,7 +5,7 @@
 @import "skills";
 @import "contacts";
 
-.clear_page {
-    transition: clip-path 1s ease-in;
-    clip-path: circle(0 at 100% 100%);
+.main_content {
+    flex: 1;
+    position: relative;
 }

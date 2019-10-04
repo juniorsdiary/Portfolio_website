@@ -1,8 +1,5 @@
-.skills_page {
-  @extend %page;
-  transition: 1s clip-path 1s ease-in;
-  clip-path: circle(150% at 100% 100%);
-}
+// .skills_page {
+// }
 
 .skills_block {
   display: flex;

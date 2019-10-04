@@ -1,26 +1,41 @@
-section.projects_page.clear_page
-    .project_block
-        .project_block__project_item
-            .project_item__image-1
-            .project_item-1__name='Marvel Api Database'
-            .project_item__links
-                a(href='https://marver-api-database.helloeva.now.sh/' target='blank')='Web-page'
-                a.repo_link(href='https://github.com/HelloEVA-94/Marvel-API-DataBase' target='blank')
-        .project_block__project_item
-            .project_item__image-2
-            .project_item-1__name='CitHub Api Search'
-            .project_item__links
-                a(href='https://githubapisearch.helloeva.now.sh/' target='blank')='Web-page'
-                a.repo_link(href='https://github.com/HelloEVA-94/GitHub_Api_Search' target='blank')
-        .project_block__project_item
-            .project_item__image-3
-            .project_item-1__name='MVC 3D Tetris'
-            .project_item__links
-                a(href='https://mvc-3dtetris.helloeva.now.sh' target='blank')='Web-page'
-                a.repo_link(href='https://github.com/HelloEVA-94/MVC-3D_TETRIS' target='blank')
-        .project_block__project_item
-            .project_item__image-4
-            .project_item-1__name='Durak Online'
-            .project_item__links
-                a(href='https://durak-online.herokuapp.com/' target='blank')='Web-page'
-                a.repo_link(href='https://github.com/HelloEVA-94/Durak_Online_Game' target='blank')
+-var marvel = require('../../assets/imgs/marvel.png');
+-var github = require('../../assets/imgs/github.png');
+-var tetris = require('../../assets/imgs/tetris.png');
+-var durak_online = require('../../assets/imgs/durak-online.png');
+-var marvel_description = 'One of my hobbies is reading comics. So I combined these to interests of mine to create something cool. This app allows you to find any info about superheroes or villains. For instance, Iron Man or Spider-man and to know in which comics they have appeared'
+-var github_description = "GitHub is the most using web-site among programmers including me that's why creating search app of users and repositories throughout all the github data is a good idea to practice."
+-var tetris_description = "When you wish to differ from a lot of developers the one thing that certainly would be distinct it is knowledge of design patterns. Commonly used pattern in developing Front-end part of any product is MVC so I decided to create a game based on this approach"
+-var durak_description = "I love games and especially play with other players offline or online. I created vastly famous card game in Russia to play online. Back-end side is made using Node.js with help of web-sockets connection."
+-
+  var projects_data = [
+    {
+      title: 'Marvel Api Database', 
+      image: marvel, 
+      description: marvel_description,  
+      web_link: 'https://marver-api-database.helloeva.now.sh/', 
+      git_link: 'https://github.com/HelloEVA-94/Marvel-API-DataBase' },
+    {
+      title: 'GitHub Api Search', 
+      image: github, 
+      description: github_description,  
+      web_link: 'https://githubapisearch.helloeva.now.sh/', 
+      git_link: 'https://github.com/HelloEVA-94/GitHub_Api_Search' },
+    {
+      title: 'MVC 3D Tetris', 
+      image: tetris, 
+      description: tetris_description,  
+      web_link: 'https://mvc-3dtetris.helloeva.now.sh', 
+      git_link: 'https://github.com/HelloEVA-94/MVC-3D_TETRIS' },
+    {
+      title: 'Durak Online', 
+      image: durak_online, 
+      description: durak_description,  
+      web_link: 'https://durak-online.herokuapp.com/', 
+      git_link: 'https://github.com/HelloEVA-94/Durak_Online_Game' },
+  ]
+
+section.projects_page
+  .project_block
+    for project in projects_data
+      +project_card(project.title, project.image, project.description, project.web_link, project.git_link)
+    
