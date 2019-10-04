@@ -38,12 +38,6 @@ module.exports = {
           },
           {
             loader: 'image-webpack-loader',
-            options: {
-              pngquant: {
-                quality: '90',
-                speed: 4,
-              },
-            },
           },
         ],
       },
