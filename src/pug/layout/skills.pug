@@ -1,29 +1,18 @@
+- var every_day = [ 'HTML5 + Pug', 'CSS3 + SASS', 'JavaScript', 'Webpack', 'PostCSS', 'ESlint', 'Prettier', 'Stylelint', 'React', 'Redux', 'Router', 'Material UI', 'Styled Components'];
+- var basics = ['Node.js','Express', 'MongoDB', 'Socket.io', 'RESTful API', 'Jest+enzyme testing'];
+- var in_progress = ['Algorithms', 'Data structures', 'OOP/design patterns'];
+- var programs = ['Visual Studio Code', 'curl CLI', 'ConEmu', 'Adobe XD', 'Figma'];
 section.skills_page
   div.skills_block
     ul.skills_basic_stack='Tools for every day'
-      li='HTML5 + Pug'
-      li='CSS3 + SASS'
-      li='JavaScript'
-      li='Webpack'
-      li='PostCSS'
-      li='ESlint + Prettier  + Stylelint'
-      li='React + Redux + Router'
-      li='Material UI'
-      li='Styled Components'
-    ul.skills_other_skills='Some basic usage'
-      li='Node.js'
-      li='Express'
-      li='MongoDB'
-      li='Socket.io'
-      li='RESTful API'
-      li='Jest+enzyme testing'
+      for skill in every_day
+        li=skill
+    ul.skills_other_skills='Basic knowledge'
+      for skill in basics
+        li=skill
     ul.skills_high_priority_skills='Studying now'
-      li='Algorithms'
-      li='Data structures'
-      li='OOP/design patterns'
+      for skill in in_progress
+        li=skill
     ul.skills_programs='Programs and utilities'
-      li='Visual Studio Code'
-      li='curl CLI'
-      li='ConEmu'
-      li='Adobe XD'
-      li='Figma'
+      for skill in programs
+        li=skill  

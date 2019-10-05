@@ -5,7 +5,12 @@
 @import "skills";
 @import "contacts";
 
-.main_content {
-    flex: 1;
-    position: relative;
+.scroll_to_top_btn {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    bottom: 5%;
+    right: 5%;
+    background: red;
+    border-radius: 50%; 
 }

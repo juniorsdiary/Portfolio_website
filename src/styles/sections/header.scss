@@ -1,7 +1,8 @@
 
 .navigation_block {
-  flex: 0;
+  position: fixed;
   width: 100%;
+  z-index: 100;
 }
 
 .nav_links_set {
@@ -28,15 +29,14 @@
 
 .active_link {
   a {
-    box-shadow: none;
     background: white;
-    transition: 0.5s transform ease-in, 0.5s box-shadow ease-in, 1s background 1s ease-in;
+    transition: box-shadow 0.5s ease-in, background 0.5s ease-in;
   }
 }
 
 .inactive_link {
   a {
-    transition: 0.5s transform 1s ease-in, 0.5s box-shadow 1s ease-in, background 1s ease-in;
+    transition: box-shadow 0.5s ease-in, background 0.5s ease-in;
   }
 }
 

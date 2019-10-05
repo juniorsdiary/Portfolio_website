@@ -1,5 +1,6 @@
 import Observer from './Observer'
 import Observable from './Observable'
+import { getCoords } from './lib';
 
 const changeActiveState = (item, data) => {
   if (item === data) {
@@ -12,11 +13,9 @@ const changeActiveState = (item, data) => {
 };
 
 const scrollToAnchor = (item, data, i, index) => {
-  
   if (i === index) {
-    // item.classList.remove(`clear_page`);
-  } else {
-    // item.classList.add(`clear_page`);
+    const scrollValue = getCoords(item).top;
+    window.scrollTo({top: scrollValue-60, behavior: 'smooth'})
   }
 };
 

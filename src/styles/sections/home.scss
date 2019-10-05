@@ -1,5 +1,6 @@
 .home_page {
   align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
@@ -8,7 +9,6 @@
   font-size: rem(30px);
   color: white;
   margin: 1rem auto;
-  z-index: 100;
   opacity: 0;
 }
 
