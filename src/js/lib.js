@@ -10,4 +10,22 @@ function getRandom() {
   return Math.random()
 }
 
-export {getCoords, getRandom};
+function tabSwitcher(activeTab, index) {
+  const fullWidth = activeTab.parentElement.getBoundingClientRect().width;
+  if (index) {
+    const value = [...activeTab.parentElement.children]
+      .filter((_, i) => i < index)
+      .map(item => item.getBoundingClientRect().width)
+      .reduce((a, b) => a + b);
+    const position = `${Math.floor((value / fullWidth) * 100)}%`;
+    const width = `${Math.floor((activeTab.getBoundingClientRect().width / fullWidth) * 100)}%`;
+    return { width, position }
+  } 
+    const rect = activeTab.getBoundingClientRect();
+    const width = `${Math.floor((rect.width / fullWidth) * 100)}%`;
+    const position = '0%';
+    return { width, position }
+  
+}
+
+export {getCoords, getRandom, tabSwitcher};

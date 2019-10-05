@@ -54,11 +54,10 @@ $tic-toe-data: (
   bottom: 80px;
   right: 25px;
   width: 30%;
-  height: 24%;
-  @include md-block {
-    height: 36%;
+  height: 10%;
+  @include bg-block {
     width: 22%;
-    top: 80px;
+    top: 100px;
     right: 5%;
   }
   transform: rotate(-15deg);
@@ -109,7 +108,7 @@ $object-data: (
   left: 40px;
   @include bg-block {
     width: 13%;
-    top: 80px;
+    top: 100px;
   }
   path, circle {
     stroke: $stroke-color;

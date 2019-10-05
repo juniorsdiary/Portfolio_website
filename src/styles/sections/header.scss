@@ -2,20 +2,31 @@
 .navigation_block {
   position: fixed;
   width: 100%;
+  background: var(--navbg);
+  padding: 1rem;
+  text-align: center;
+  transition: background 0.5s linear;
   z-index: 100;
 }
 
 .nav_links_set {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  @include sm-block {
-    justify-content: center;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: var(--width);
+    height: 2px;
+    left: var(--position);
+    background: white;
+    transition: left 0.2s linear, width 0.2s linear; 
   }
 }
 
 .nav_link {
-  margin: 0.5rem;
+  color: white;
   a {
     font-size: 28px;
     text-align: center;
@@ -23,20 +34,16 @@
     padding: 0 0.5rem;
     color: inherit;
     display: block;
-    box-shadow: 9px 20px 15px -8px rgba(0,0,0,.75);
   }
 }
 
 .active_link {
   a {
-    background: white;
-    transition: box-shadow 0.5s ease-in, background 0.5s ease-in;
   }
 }
 
 .inactive_link {
   a {
-    transition: box-shadow 0.5s ease-in, background 0.5s ease-in;
   }
 }
 
@@ -52,7 +59,7 @@ $link_bgs: (
   @each $number, $bg in $link_bgs {
     &:nth-child(#{$number}) {
       a {
-        background: $bg;
+        // background: $bg;
       }
     }
   }
