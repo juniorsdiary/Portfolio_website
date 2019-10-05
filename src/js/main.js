@@ -14,6 +14,7 @@ const colors = {
   skills: 'hsl(0, 0%, 71%)',
   contacts: 'rgb(179, 116, 176)',
 }
+
 function setTabsData({width, position}) {
   document.documentElement.style.setProperty('--width', width);
   document.documentElement.style.setProperty('--position', position);
@@ -26,19 +27,14 @@ function setNavBackground(key) {
 const changeActiveState = (item, data, i, index) => {
   if (item === data) {
     setTabsData(tabSwitcher(item, index));
-    // item.classList.remove('inactive_link');
-    // item.classList.add('active_link');
     setNavBackground(item.firstElementChild.textContent)
-  } else {
-    item.classList.remove('active_link');
-    item.classList.add('inactive_link');
   }
 };
 
 const scrollToAnchor = (item, data, i, index) => {
   if (i === index) {
     const scrollValue = getCoords(item).top;
-    window.scrollTo({top: scrollValue, behavior: 'smooth'});
+    window.scrollTo({top: scrollValue-60, behavior: 'smooth'});
   }
 };
 
