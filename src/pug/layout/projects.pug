@@ -31,7 +31,8 @@
   ]
 
 section.projects_page
+  .topAnchor
   .project_block
     for project in projects_data
       +project_card(project.title, project.image, project.description, project.web_link, project.git_link)
-    
+  .bottomAnchor  

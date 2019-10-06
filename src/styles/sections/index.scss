@@ -14,3 +14,14 @@
     background: red;
     border-radius: 50%; 
 }
+
+.topAnchor {
+    position: absolute;
+    top: -10px;
+    left: 0;
+}
+.bottomAnchor {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+}

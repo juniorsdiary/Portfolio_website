@@ -3,19 +3,17 @@ import { getCoords, tabSwitcher } from './lib';
 const images = ['./imgs/marvel.png', './imgs/github.png', './imgs/tetris.png', './imgs/durak-online.png'];
 const colors = ['rgb(231, 81, 81)', 'rgb(98, 165, 79)', 'rgb(82, 120, 208)', 'hsl(0, 0%, 71%)', 'rgb(179, 116, 176)'];
 
-
 const projects = document.querySelectorAll('.project_block__project_item');
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav_link');
+const topAnchor = document.querySelectorAll('.topAnchor');
+const bottomAnchor = document.querySelectorAll('.bottomAnchor');
 
 const scrollToAnchor = (i) => {
   const section = sections[i];
   const scrollValue = getCoords(section).top;
   window.scrollTo({top: scrollValue, behavior: 'smooth'});
 };
-
-[...navLinks].forEach((item, i) => item.addEventListener('click', scrollToAnchor.bind(null, i)));
-
 
 const setNavBackground = (index) => {
   const color = colors[index]
@@ -38,28 +36,39 @@ const showProject = (entries) => {
   })
 };
 
-const toggleNavActiveTab = (entries) => {
+const switchTabs = (index) => {
+  setTabsData(tabSwitcher(navLinks[index], index));
+  setNavBackground(index);
+};
+
+const topAnchorsCallBack = (entries) => {
   entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const changeNavStyle = getCoords(entry.target).top <= window.scrollY && entry.boundingClientRect.height + getCoords(entry.target).top >= window.scrollY;
-      if (changeNavStyle) {
-        const index = [...sections].findIndex(item => item === entry.target)
-        setTabsData(tabSwitcher(navLinks[index], index));
-        setNavBackground(index);
+    if (!entry.isIntersecting) {
+      if (getCoords(entry.target).top < window.scrollY) {
+        const index = [...topAnchor].indexOf(entry.target);
+        switchTabs(index);
       }
     }  
   })
 };
 
-const projectOptions = {
-  root: null,
-  rootMargin: '100px',
-  threshold: 0.2
+const bottomAnchorsCallBack = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      if (getCoords(entry.target).top > window.scrollY) {
+        const index = [...bottomAnchor].indexOf(entry.target);
+        switchTabs(index);
+      }
+    }  
+  })
 };
 
-const projectsObserver = new IntersectionObserver(showProject, projectOptions);
-const sectionsObserver = new IntersectionObserver(toggleNavActiveTab, {rootMargin: '100px 0px 0px 0px', threshold: [0.25, 0.5, 0.75, 1]});
+const projectsObserver = new IntersectionObserver(showProject, { rootMargin: '100px', threshold: 0.2 });
+const topAnchorObserver = new IntersectionObserver(topAnchorsCallBack, { rootMargin: '0px', threshold: 1});
+const bottomAnchorObserver = new IntersectionObserver(bottomAnchorsCallBack, {rootMargin: '0px', threshold: 1});
 
 projects.forEach(project => projectsObserver.observe(project));
-sections.forEach(section => sectionsObserver.observe(section));
+topAnchor.forEach(anchor => topAnchorObserver.observe(anchor));
+bottomAnchor.forEach(anchor => bottomAnchorObserver.observe(anchor));
 
+[...navLinks].forEach((item, i) => item.addEventListener('click', scrollToAnchor.bind(null, i)));

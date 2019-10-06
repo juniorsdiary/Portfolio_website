@@ -4,6 +4,7 @@
 - var programs = ['Visual Studio Code', 'curl CLI', 'ConEmu', 'Adobe XD', 'Figma'];
 
 section.skills_page.content-wrapper
+  .topAnchor
   div.skills_block
     ul.skills_basic_stack='Tools for every day'
       for skill in every_day
@@ -16,4 +17,5 @@ section.skills_page.content-wrapper
         li=skill
     ul.skills_programs='Programs and utilities'
       for skill in programs
-        li=skill  
+        li=skill
+  .bottomAnchor
