@@ -5,6 +5,13 @@ mixin project_card(title, imageSrc, description, web_link, git_link)
     .project_block_details
       p.project_item_title=title
       a(href=web_link target='blank')='Web-page'
-      a.repo_link(href=git_link target='blank')
+      a.repo_link(href=git_link target='blank')='repository'
         include ../assets/imgs/github-logo.svg
     p.project_item_description=description
+
+mixin skills_set(title, skills)
+  .skill_block
+    p='Programs and utilities'
+    ul.skills_list
+      for skill in skills
+        li=skill

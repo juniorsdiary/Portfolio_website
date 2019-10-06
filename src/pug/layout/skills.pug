@@ -5,17 +5,9 @@
 
 section.skills_page.content-wrapper
   .topAnchor
-  div.skills_block
-    ul.skills_basic_stack='Tools for every day'
-      for skill in every_day
-        li=skill
-    ul.skills_other_skills='Basic knowledge'
-      for skill in basics
-        li=skill
-    ul.skills_high_priority_skills='Studying now'
-      for skill in in_progress
-        li=skill
-    ul.skills_programs='Programs and utilities'
-      for skill in programs
-        li=skill
+  .skills_block
+    +skills_set('Tools for every day', every_day)
+    +skills_set('Basic knowledge', basics)
+    +skills_set('Studying now', in_progress)
+    +skills_set('Programs and utilities', programs)
   .bottomAnchor

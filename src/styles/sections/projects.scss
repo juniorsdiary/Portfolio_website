@@ -10,6 +10,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 60px 0;
 }
 
 .project_block__project_item {
@@ -54,10 +55,12 @@
   justify-content: space-evenly;
   font-size: rem(25px);
   padding: 0.5rem 0;
-  a {
-    color: inherit;
-    text-decoration: underline;
-  }
+}
+.repo_link {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: underline;
 }
 .project_item_title {
   font-size: rem(30px);
