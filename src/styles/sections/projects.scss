@@ -1,7 +1,7 @@
 .projects_page {
   position: relative;
-
   background: #0000007e;
+  align-items: center;
 }
 
 .project_block {
@@ -10,7 +10,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 60px 0;
 }
 
 .project_block__project_item {

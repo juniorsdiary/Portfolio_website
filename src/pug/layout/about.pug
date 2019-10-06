@@ -1,11 +1,18 @@
 section.about_page.content-wrapper
   .topAnchor
-  .description_block
-    p='Let me tell you something about me.'
-    p='My name is Vladislav'
-    P='Programming allows me create lots of awesome stuff.'
-    p="That's why I love creating Front-end for websites."
-    P='This is the thing that attracts customers.'
-    p='In the meantime I am looking for starting positions to become part of a cool team and great teammate myself.'
-    p='Go ahead and try my projects. They will tell you more than just sweet words.'
+  h2.section_title='Let me tell you something about me'
+  .about_content
+    .about_content_general_info
+      img.avatar(src='./imgs/avatar.jpg' data-src='./imgs/avatar.jph' alt='personal_avatar')
+      ul.general_info_list
+        li
+          span='Name:'
+          span='Evstigneev Vladislav Andreevich'
+        li
+          span='Age:'
+          span='25'
+    .about_content_description
+      P="Programming allows me create lots of awesome stuff. That's why I love creating Front-end for websites. This is the thing that attracts customers. In the meantime I am looking for starting positions to become part of a cool team and great teammate myself. Go ahead and try my projects, they will tell you more than just sweet words."
+    //- include ../../assets/imgs/tic-toe.svg
+    //- include ../../assets/imgs/3d-object.svg
   .bottomAnchor

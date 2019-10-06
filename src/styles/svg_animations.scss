@@ -51,10 +51,10 @@ $tic-toe-data: (
 
 #tic-toe {
   position: absolute;
-  bottom: 80px;
+  bottom: 100px;
   right: 25px;
-  width: 30%;
-  height: 10%;
+  width: 36%;
+  height: 20%;
   @include bg-block {
     width: 22%;
     top: 100px;

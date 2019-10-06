@@ -11,14 +11,28 @@
   font-size: rem(30px);
   color: white;
   margin: 1rem auto;
-  opacity: 0;
+  animation: 1s linear backwards appear 2s;
 }
 
-.description {
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.welcome_messages {
   font-size: rem(29px);
   margin: 0.2em;
   color: white;
-  opacity: 0;
+  @for $li from 1 through 4 {
+    li:nth-child(#{$li}) {
+      animation: 1s linear backwards appear #{2+$li}s;
+    }
+  }
 }
 
 .appear {
