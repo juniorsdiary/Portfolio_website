@@ -1,21 +1,21 @@
 mixin project_card(title, imageSrc, description, web_link, git_link, sills_used)
   .project_block__project_item
-    .project_block_image_wrapper
+    .project_item__image_wrapper
       img(class='project_item__image' src='' data-src=imageSrc alt=title)
-    .project_block_details
-      p.project_item_title=title
-    p.project_item_description=description
+    .project_item__details
+      p.project_item__title=title
+    p.project_item__description=description
     .project_item__hover_info
-      ul.skills_used_list
+      ul.hover_info__skills_used_list
         for skill in sills_used
           li=skill
-      a.web_page_link(href=web_link target='blank')='Visit web-page'
-      a.repo_link(href=git_link target='blank')
+      a.hover_info__web_page_link(href=web_link target='blank')='Visit web-page'
+      a.hover_info__repo_link(href=git_link target='blank')
         include ../assets/imgs/github-logo.svg
 
 mixin skills_set(title, skills)
   .skill_block
-    p='Programs and utilities'
+    p=title
     ul.skills_list
       for skill in skills
         li=skill

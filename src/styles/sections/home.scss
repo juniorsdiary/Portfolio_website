@@ -4,16 +4,31 @@
   justify-content: center;
   height: 100vh;
   background: $secondary;
-}
 
-.title_text {
-  @include size(10);
-  position: relative;
-  font-size: rem(35px);
-  color: white;
-  margin: 1rem auto;
-  text-align: center;
-  animation: 1s linear backwards appear 2s;
+  &__welcome_messages {
+    @include size(10);
+    font-size: rem(25px);
+    margin: 0.2em;
+    color: white;
+    li {
+      text-align: center;
+    }
+    @for $li from 1 through 4 {
+      li:nth-child(#{$li}) {
+        animation: 1s linear backwards appear #{2+$li}s;
+      }
+    }
+  }
+
+  &__title {
+    @include size(10);
+    position: relative;
+    font-size: rem(35px);
+    color: white;
+    margin: 1rem auto;
+    text-align: center;
+    animation: 1s linear backwards appear 2s;
+  }
 }
 
 @keyframes appear {
@@ -26,25 +41,6 @@
 }
 
 
-.welcome_messages {
-  @include size(10);
-  font-size: rem(30px);
-  margin: 0.2em;
-  color: white;
-  li {
-    text-align: center;
-  }
-  @for $li from 1 through 4 {
-    li:nth-child(#{$li}) {
-      animation: 1s linear backwards appear #{2+$li}s;
-    }
-  }
-}
-
-.appear {
-  opacity: 1;
-  transition: opacity 1s linear;
-}
 
 
 

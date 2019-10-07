@@ -64,7 +64,7 @@
   }
 }
 
-.skills_used_list {
+.hover_info__skills_used_list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -86,7 +86,7 @@
   }
 }
 
-.repo_link {
+.hover_info__repo_link {
   position: relative;
   display: block;
   color: inherit;
@@ -115,11 +115,11 @@
   }
 }
 
-.web_page_link {
+.hover_info__web_page_link {
   color: black;
 }
 
-.project_block_image_wrapper {
+.project_item__image_wrapper {
   position: relative;
   display: block;
   position: relative;
@@ -137,13 +137,13 @@
   transition: transform 0.2s linear;
 }
 
-.project_item_description {
+.project_item__description {
   position: relative;
   font-size: rem(20px);
   padding: 0.5rem 1rem;
 }
 
-.project_block_details {
+.project_item__details {
   @include size(12);
   position: relative;
   bottom: 0;
@@ -155,7 +155,7 @@
   padding: 0.5rem 0;
 }
 
-.project_item_title {
+.project_item__title {
   font-size: rem(30px);
   text-align: center;
 }
