@@ -10,12 +10,9 @@
   display: flex;
   justify-content: center;
   font-size: rem(20px);
-  @include size(12);
+  @include size(11);
 }
 .skill_block {
-  @include size(5);
-  @include size-md(4);
-  @include size-bg(3);
   margin: 0.5rem;
 }
 

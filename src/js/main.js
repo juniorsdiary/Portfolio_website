@@ -1,4 +1,7 @@
+import smoothscroll from 'smoothscroll-polyfill';
 import { getCoords, tabSwitcher } from './lib';
+
+smoothscroll.polyfill();
 
 const images = document.querySelectorAll('.project_item__image');
 const colors = ['rgb(231, 81, 81)', '#b4ec58', 'rgb(82, 120, 208)', 'hsl(0, 0%, 71%)', 'rgb(179, 116, 176)'];
@@ -9,16 +12,21 @@ const navLinks = document.querySelectorAll('.nav_link');
 const topAnchor = document.querySelectorAll('.top_anchor');
 const bottomAnchor = document.querySelectorAll('.bottom_anchor');
 const aboutContent = document.querySelector('.about_content');
-const navBar = document.querySelector('.navigation_block')
+const navBar = document.querySelector('.navigation_block');
+let navHeight = navBar.getBoundingClientRect().height;
+document.documentElement.style.setProperty('--anchor', `${navHeight}px`);
+
 const scrollToAnchor = (i) => {
   const section = sections[i];
   const scrollValue = getCoords(section).top;
-  const navHeight = navBar.getBoundingClientRect().height;
-  window.scrollTo({top: scrollValue-navHeight, behavior: 'smooth'});
+  navHeight = navBar.getBoundingClientRect().height;
+  document.documentElement.style.setProperty('--anchor', `${navHeight+10}px`);
+  window.scroll({top: scrollValue-navHeight, behavior: 'smooth'});
+  
 };
 
 const setNavBackground = (index) => {
-  const color = colors[index]
+  const color = colors[index];
   document.documentElement.style.setProperty('--navbg', `${color}`);
 }
 
@@ -47,7 +55,7 @@ const switchTabs = (index) => {
 const topAnchorsCallBack = (entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      if (getCoords(entry.target).top < window.scrollY) {
+      if (getCoords(entry.target).top <= window.scrollY) {
         const index = [...topAnchor].indexOf(entry.target);
         switchTabs(index);
       }
@@ -58,7 +66,7 @@ const topAnchorsCallBack = (entries) => {
 const bottomAnchorsCallBack = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      if (getCoords(entry.target).top > window.scrollY) {
+      if (getCoords(entry.target).top >= window.scrollY) {
         const index = [...bottomAnchor].indexOf(entry.target);
         switchTabs(index);
       }
@@ -78,9 +86,9 @@ const animateAboutPageCallBack = (entries, observer) => {
 }
 
 const projectsObserver = new IntersectionObserver(showProject, { rootMargin: '100px', threshold: 0.2 });
-const topAnchorObserver = new IntersectionObserver(topAnchorsCallBack, { rootMargin: '0px', threshold: 1});
-const bottomAnchorObserver = new IntersectionObserver(bottomAnchorsCallBack, {rootMargin: '0px', threshold: 1});
-const animateAboutPage = new IntersectionObserver(animateAboutPageCallBack, {})
+const topAnchorObserver = new IntersectionObserver(topAnchorsCallBack, { threshold: 1});
+const bottomAnchorObserver = new IntersectionObserver(bottomAnchorsCallBack, { threshold: 1 });
+const animateAboutPage = new IntersectionObserver(animateAboutPageCallBack)
 
 projects.forEach(project => projectsObserver.observe(project));
 topAnchor.forEach(anchor => topAnchorObserver.observe(anchor));

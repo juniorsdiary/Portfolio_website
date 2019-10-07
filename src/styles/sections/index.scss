@@ -8,13 +8,13 @@
 
 .top_anchor {
     position: absolute;
-    top: -55px;
+    top: calc(var(--anchor)*-1);
     left: 0;
 }
 
 .bottom_anchor {
     position: absolute;
-    bottom: 55px;
+    bottom: var(--anchor);
     left: 0;
 }
 

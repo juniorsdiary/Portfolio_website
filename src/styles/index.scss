@@ -7,7 +7,7 @@
 @import 'sections/index';
 
 body {
-  overflow-x: hidden;
+  scroll-behavior: smooth;
   &:before {
     content: "";
     display: block;
