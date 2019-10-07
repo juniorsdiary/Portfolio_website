@@ -5,31 +5,24 @@
 @import "skills";
 @import "contacts";
 
-.scroll_to_top_btn {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    bottom: 5%;
-    right: 5%;
-    background: red;
-    border-radius: 50%; 
-}
 
-.topAnchor {
+.top_anchor {
     position: absolute;
     top: -55px;
     left: 0;
 }
 
-.bottomAnchor {
+.bottom_anchor {
     position: absolute;
     bottom: 55px;
     left: 0;
 }
 
 .section_title {
+    @include size(10);
     display: inline-block;
     font-size: rem(38px);
     margin: 1rem 0;
     color: white;
+    text-align: center;
 }

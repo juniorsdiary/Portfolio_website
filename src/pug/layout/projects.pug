@@ -1,43 +1,43 @@
--var marvel = './imgs/marvel.png';
--var github = './imgs/github.png';
--var tetris = './imgs/tetris.png';
--var durak_online = './imgs/durak-online.png';
--var marvel_description = 'One of my hobbies is reading comics. So I combined these to interests of mine to create something cool. This app allows you to find any info about superheroes or villains. For instance, Iron Man or Spider-man and to know in which comics they have appeared'
--var github_description = "GitHub is the most using web-site among programmers including me that's why creating search app of users and repositories throughout all the github data is a good idea to practice."
--var tetris_description = "When you wish to differ from a lot of developers the one thing that certainly would be distinct it is knowledge of design patterns. Commonly used pattern in developing Front-end part of any product is MVC so I decided to create a game based on this approach"
--var durak_description = "I love games and especially play with other players offline or online. I created vastly famous card game in Russia to play online. Back-end side is made using Node.js with help of web-sockets connection."
 -
   var projects_data = [
     {
-      title: 'Marvel Api Database', 
-      image: marvel, 
-      description: marvel_description,  
+      title: 'Marvel Api Database',
+      image: './imgs/marvel.png', 
+      description: 'One of my hobbies is reading comics. So I combined these to interests of mine to create something cool. This app allows you to find any info about superheroes or villains. For instance, Iron Man or Spider-man',  
       web_link: 'https://marver-api-database.helloeva.now.sh/', 
-      git_link: 'https://github.com/HelloEVA-94/Marvel-API-DataBase' },
+      git_link: 'https://github.com/HelloEVA-94/Marvel-API-DataBase',
+      skills_used: ['React', 'Redux', 'React-Router', 'SASS', 'Responsive', 'Adaptive'],
+   },
     {
       title: 'GitHub Api Search', 
-      image: github, 
-      description: github_description,  
+      image: './imgs/github.png', 
+      description: "GitHub is the most using web-site among programmers including me that's why creating search app of users and repositories throughout all the github data is a good idea to practice.",  
       web_link: 'https://githubapisearch.helloeva.now.sh/', 
-      git_link: 'https://github.com/HelloEVA-94/GitHub_Api_Search' },
+      git_link: 'https://github.com/HelloEVA-94/GitHub_Api_Search',
+      skills_used: ['React', 'Redux', 'React-Router', 'Styled Components', 'Responsive', 'Adaptive'],
+    },
     {
       title: 'MVC 3D Tetris', 
-      image: tetris, 
-      description: tetris_description,  
+      image: './imgs/tetris.png', 
+      description: "Tetris is the cultural phenomenon, creating it was amazing process because I faced with uncommon problems in web-developing. Also I tried to implement some design patterns.",  
       web_link: 'https://mvc-3dtetris.helloeva.now.sh', 
-      git_link: 'https://github.com/HelloEVA-94/MVC-3D_TETRIS' },
+      git_link: 'https://github.com/HelloEVA-94/MVC-3D_TETRIS',
+      skills_used: ['Native JavaScript', 'SASS', 'MVC', 'Only desktop design'],
+    },
     {
       title: 'Durak Online', 
-      image: durak_online, 
-      description: durak_description,  
+      image: './imgs/durak-online.png', 
+      description: "I created vastly famous card game in Russia to play online. Back-end side is made using Node.js with help of web-sockets connection.",  
       web_link: 'https://durak-online.herokuapp.com/', 
-      git_link: 'https://github.com/HelloEVA-94/Durak_Online_Game' },
+      git_link: 'https://github.com/HelloEVA-94/Durak_Online_Game',
+      skills_used: ['React', 'Redux', 'Router', 'Node.js', 'Socket.io', 'Material UI', 'Only desktop design'],
+    },
   ]
 
 section.projects_page.content-wrapper
-  .topAnchor
+  .top_anchor
   h2.section_title='Awesome projects'
   .project_block
     for project in projects_data
-      +project_card(project.title, project.image, project.description, project.web_link, project.git_link)
-  .bottomAnchor  
+      +project_card(project.title, project.image, project.description, project.web_link, project.git_link, project.skills_used)
+  .bottom_anchor  

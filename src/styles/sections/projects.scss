@@ -18,14 +18,112 @@
   @include size-bg(6);
   margin: 1rem;
   color: black;
-  background: #9dfab9;
+  background: $projects;
   opacity: 0;
   transform: translate(-100%, 0);
   transition: opacity 1s linear, transform 0.5s linear;
+  @include md-block {
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 0;
+      background: hsl(240, 28%, 20%);
+      transition: height 0.5s ease-in;
+      z-index: 1;
+    }
+    &:hover, &:focus {
+      .project_item__hover_info {
+        height: 100%;
+      }
+      &:before {
+        height: 100%;
+      }
+    }
+  }
 }
+
+.project_item__hover_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background: $projects;
+  @include md-block {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s height 0.25s ease-in;
+    z-index: 2;
+  }
+}
+
+.skills_used_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  font-size: rem(25px);
+  color: white;
+  li {
+    margin: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: hsl(240, 28%, 20%);
+    cursor: default;
+    @include md-block {
+      &:hover {
+        animation: shake 0.2s infinite;
+      }
+    }
+  }
+}
+
+.repo_link {
+  position: relative;
+  display: block;
+  color: inherit;
+  width: 64px;
+  height: 64px;
+  margin: 1rem;
+  border-radius: 50%;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0px 0px 15px 5px white;
+    animation: glow 0.5s linear alternate infinite;
+  }
+  @include md-block {
+    &:hover {
+      &:after {
+        animation: glow 0.5s linear alternate infinite;
+      }
+    }
+  }
+}
+
+.web_page_link {
+  color: black;
+}
+
 .project_block_image_wrapper {
   position: relative;
+  display: block;
+  position: relative;
   padding-top: 48%;
+  overflow: hidden;
 }
 .project_item__image {
   position: absolute;
@@ -55,23 +153,39 @@
   font-size: rem(25px);
   padding: 0.5rem 0;
 }
-.repo_link {
-  display: flex;
-  align-items: center;
-  color: inherit;
-  text-decoration: underline;
-}
+
 .project_item_title {
   font-size: rem(30px);
   text-align: center;
 }
 .gh-logo {
   fill: black;
-  width: 32px;
-  height: 32px;
+  width: 100%;
+  height: 100%;
 }
 
 .fade_in {
   opacity: 1;
   transform: translate(0);
+}
+
+@keyframes glow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
 }

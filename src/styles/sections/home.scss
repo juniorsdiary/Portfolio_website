@@ -3,14 +3,16 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #0000007e;
+  background: $secondary;
 }
 
 .title_text {
+  @include size(10);
   position: relative;
-  font-size: rem(30px);
+  font-size: rem(35px);
   color: white;
   margin: 1rem auto;
+  text-align: center;
   animation: 1s linear backwards appear 2s;
 }
 
@@ -25,9 +27,13 @@
 
 
 .welcome_messages {
-  font-size: rem(29px);
+  @include size(10);
+  font-size: rem(30px);
   margin: 0.2em;
   color: white;
+  li {
+    text-align: center;
+  }
   @for $li from 1 through 4 {
     li:nth-child(#{$li}) {
       animation: 1s linear backwards appear #{2+$li}s;

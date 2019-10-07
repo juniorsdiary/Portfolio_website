@@ -1,19 +1,19 @@
 import { getCoords, tabSwitcher } from './lib';
 
 const images = document.querySelectorAll('.project_item__image');
-const colors = ['rgb(231, 81, 81)', 'rgb(98, 165, 79)', 'rgb(82, 120, 208)', 'hsl(0, 0%, 71%)', 'rgb(179, 116, 176)'];
+const colors = ['rgb(231, 81, 81)', '#b4ec58', 'rgb(82, 120, 208)', 'hsl(0, 0%, 71%)', 'rgb(179, 116, 176)'];
 
 const projects = document.querySelectorAll('.project_block__project_item');
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav_link');
-const topAnchor = document.querySelectorAll('.topAnchor');
-const bottomAnchor = document.querySelectorAll('.bottomAnchor');
+const topAnchor = document.querySelectorAll('.top_anchor');
+const bottomAnchor = document.querySelectorAll('.bottom_anchor');
 const aboutContent = document.querySelector('.about_content');
 
 const scrollToAnchor = (i) => {
   const section = sections[i];
   const scrollValue = getCoords(section).top;
-  window.scrollTo({top: scrollValue-50, behavior: 'smooth'});
+  window.scrollTo({top: scrollValue-30, behavior: 'smooth'});
 };
 
 const setNavBackground = (index) => {
@@ -65,11 +65,13 @@ const bottomAnchorsCallBack = (entries) => {
   })
 };
 
-const animateAboutPageCallBack = (entries) => {
+const animateAboutPageCallBack = (entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('animate');
-
+      const avatar = document.querySelector('.avatar');
+      avatar.src = avatar.getAttribute('data-src');
+      observer.unobserve(entry.target);
     }
   })
 }
