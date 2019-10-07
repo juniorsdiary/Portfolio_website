@@ -9,11 +9,12 @@ const navLinks = document.querySelectorAll('.nav_link');
 const topAnchor = document.querySelectorAll('.top_anchor');
 const bottomAnchor = document.querySelectorAll('.bottom_anchor');
 const aboutContent = document.querySelector('.about_content');
-
+const navBar = document.querySelector('.navigation_block')
 const scrollToAnchor = (i) => {
   const section = sections[i];
   const scrollValue = getCoords(section).top;
-  window.scrollTo({top: scrollValue-30, behavior: 'smooth'});
+  const navHeight = navBar.getBoundingClientRect().height;
+  window.scrollTo({top: scrollValue-navHeight, behavior: 'smooth'});
 };
 
 const setNavBackground = (index) => {

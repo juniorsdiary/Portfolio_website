@@ -8,16 +8,15 @@
 
 .skills_block {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  font-size: rem(22px);
+  font-size: rem(20px);
   @include size(12);
 }
 .skill_block {
   @include size(5);
-  @include size-md(3);
-  @include size-bg(2);
-  margin: 1rem;
+  @include size-md(4);
+  @include size-bg(3);
+  margin: 0.5rem;
 }
 
 .skills_list {
