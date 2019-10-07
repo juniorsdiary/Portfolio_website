@@ -8,19 +8,20 @@
   @include size(12);
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
 .project_block__project_item {
   position: relative;
   @include size(9);
-  @include size-bg(6);
+  @include size-sm(7)
+  @include size-md(5);
   margin: 1rem;
   color: black;
   background: $projects;
   opacity: 0;
-  transform: translate(-100%, 0);
+  transform: translate(-90%, 0);
   transition: opacity 1s linear, transform 0.5s linear;
   @include md-block {
     &:before {
@@ -68,7 +69,7 @@
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
-  font-size: rem(25px);
+  font-size: rem(20px);
   color: white;
   li {
     margin: 0.5rem;
@@ -138,7 +139,7 @@
 
 .project_item_description {
   position: relative;
-  font-size: rem(25px);
+  font-size: rem(20px);
   padding: 0.5rem 1rem;
 }
 
