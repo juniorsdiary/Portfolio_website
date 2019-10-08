@@ -1,14 +1,20 @@
-- var every_day = [ 'HTML5 + Pug', 'CSS3 + SASS', 'JavaScript', 'Webpack', 'PostCSS', 'React/Redux/Router', 'Material UI', 'Styled Components'];
-- var basics = ['Node.js','Express', 'MongoDB', 'Socket.io', 'RESTful API', 'Jest+enzyme testing'];
-- var in_progress = ['Algorithms', 'Data structures', 'OOP/design patterns'];
-- var programs = ['Visual Studio Code', 'curl CLI', 'ConEmu', 'Adobe XD', 'Figma'];
+-
+  var skills_sets = {
+    "Every day": [ 'HTML5 + Pug', 'CSS3 + SASS', 'JavaScript', 'Webpack', 'PostCSS', 'React', 'Redux', 'React-Router', 'Material UI', 'Styled Components'],
+    "Basics": ['Node.js','Express', 'MongoDB', 'Socket.io', 'RESTful API', 'Jest+enzyme testing'],
+    "In progress": ['Algorithms', 'Data structures', 'OOP', 'Design patterns'],
+    "Other": ['Visual Studio Code', 'curl CLI', 'ConEmu', 'Adobe XD', 'Figma']
+  }
 
 section.skills_page.content-wrapper
   .top_anchor
   h2.section_title='My skills'
-  .skills_block
-    +skills_set('Tools for every day', every_day)
-    +skills_set('Basic knowledge', basics)
-    +skills_set('Studying now', in_progress)
-    +skills_set('Programs and utilities', programs)
+  .skills_tabs
+    .skills_tabs__type.active_tab='All'
+    each value, key in skills_sets
+      .skills_tabs__type=key
+  ul.skills_block
+    each skill_set, key in skills_sets
+      each skill in skill_set
+        li.skill_item.show_item(data-type=key)=skill
   .bottom_anchor

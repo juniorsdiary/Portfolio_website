@@ -8,22 +8,62 @@
 
 .skills_block {
   display: flex;
-  justify-content: center;
-  font-size: rem(20px);
-  @include size(11);
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  font-size: rem(16px);
+  @include size(8);
+  height: 100%;
 }
-.skill_block {
-  margin: 0.5rem;
+.skill_item {
+  display: inline;
+  overflow: hidden;
+  white-space:nowrap;
+  background: $skills;
+  clip-path: polygon(50% 0%, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%, 10% 0);
+  color: black;
 }
 
-.skills_list {
+.skill_block__title {
+  color: $skills;
+}
+
+.skills_tabs {
+  @include size(8);
+  display: flex;
   position: relative;
+  &__type {
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    transition: color 0.5s ease-in;
+    cursor: pointer;
+  }
   &:before {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 0;
     width: 100%;
     height: 2px;
-    background: white;
+    background: $skills;
   }
+}
+
+.active_tab {
+  color: black;
+}
+
+.show_item {
+  margin: 0.25rem;
+  padding: 0.25rem 0.7rem;
+  max-width: 200px;
+  opacity: 1;
+  transition: max-width 1s linear, opacity 1s linear, 0.1s margin linear, 0.1s padding linear;
+}
+
+.hide_item {
+  margin: 0.25rem 0;
+  padding: 0;
+  opacity: 0;
+  max-width: 0px;
+  transition: max-width 1s linear, opacity 1s linear, 0.1s margin 1s linear, 0.1s padding 1s linear;
 }

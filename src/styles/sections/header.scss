@@ -17,15 +17,15 @@
     position: absolute;
     bottom: 0;
     width: var(--width);
-    height: 2px;
+    height: 3px;
     left: var(--position);
-    background: white;
+    background: black;
     transition: left 0.2s linear, width 0.2s linear; 
   }
 }
 
 .nav_link {
-  color: white;
+  color: black;
   a {
     font-size: rem(25px);
     text-align: center;
@@ -35,14 +35,6 @@
     display: block;
   }
 }
-
-$link_bgs: (
-  1:$homeBG,
-  2:$about,
-  3:$projects,
-  4:$skillsBG,
-  5:$contactsBG
-);
 
 @keyframes appear {
   0% {

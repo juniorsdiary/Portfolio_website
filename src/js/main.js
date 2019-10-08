@@ -4,7 +4,7 @@ import { getCoords, tabSwitcher } from './lib';
 smoothscroll.polyfill();
 
 const images = document.querySelectorAll('.project_item__image');
-const colors = ['rgb(231, 81, 81)', '#b4ec58', 'rgb(82, 120, 208)', 'hsl(0, 0%, 71%)', 'rgb(179, 116, 176)'];
+const colors = ['rgb(0, 204, 0)', '#b4ec58', 'rgb(82, 120, 208)', 'rgb(146, 250, 193)', 'rgb(179, 116, 176)'];
 
 const projects = document.querySelectorAll('.project_block__project_item');
 const sections = document.querySelectorAll('section');

@@ -12,10 +12,3 @@ mixin project_card(title, imageSrc, description, web_link, git_link, sills_used)
       a.hover_info__web_page_link(href=web_link target='blank')='Visit web-page'
       a.hover_info__repo_link(href=git_link target='blank')
         include ../assets/imgs/github-logo.svg
-
-mixin skills_set(title, skills)
-  .skill_block
-    p=title
-    ul.skills_list
-      for skill in skills
-        li=skill
