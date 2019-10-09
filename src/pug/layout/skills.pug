@@ -1,6 +1,6 @@
 -
   var skills_sets = {
-    "Every day": [ 'HTML5 + Pug', 'CSS3 + SASS', 'JavaScript', 'Webpack', 'PostCSS', 'React', 'Redux', 'React-Router', 'Material UI', 'Styled Components'],
+    "Every day": [ 'HTML5 + Pug', 'CSS3 + SASS', 'JavaScript', 'Webpack', 'PostCSS', 'React', 'Redux', 'React-Router', 'Material UI', 'Styled Components', 'ESLint', 'Prettier', 'StyleLint'],
     "Basics": ['Node.js','Express', 'MongoDB', 'Socket.io', 'RESTful API', 'Jest+enzyme testing'],
     "In progress": ['Algorithms', 'Data structures', 'OOP', 'Design patterns'],
     "Other": ['Visual Studio Code', 'curl CLI', 'ConEmu', 'Adobe XD', 'Figma']
@@ -17,4 +17,10 @@ section.skills_page.content-wrapper
     each skill_set, key in skills_sets
       each skill in skill_set
         li.skill_item.show_item(data-type=key)=skill
+  //- .react_animation_logo
+  //-   span.first_ring
+  //-   span.second_ring
+  //-   span.third_ring
+  //-   span.inner_dot
+  //- .circle
   .bottom_anchor
