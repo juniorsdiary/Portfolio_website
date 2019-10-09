@@ -10,25 +10,3 @@ li, ul {
   padding: 0;
   list-style-type: none;
 }
-section, .section {
-  position: relative;
-} 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-}
-  
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-.container {
-  width: 100%;
-  flex: 0 0 auto;
-  position: relative;
-  margin: 0 auto;
-}
-.anchor {
-  display: inline;
-}

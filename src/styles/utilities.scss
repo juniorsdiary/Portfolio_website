@@ -48,3 +48,14 @@
     height: #{$height}vh;
     height: calc(var(--vh, 1vh)*#{$height});
   }
+
+  @mixin wrapper($max-width) {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: $max-width;
+  }
+  @mixin container {
+    display: flex;
+    flex-direction: column;
+  }

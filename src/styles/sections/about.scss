@@ -1,4 +1,5 @@
 .about_page {
+  @include container();
   position: relative;
   color: white;
   background: $primary;
@@ -8,17 +9,14 @@
 }
 
 .about_content {
-  display: flex;
-  flex-direction: column;
-
+  @include wrapper($wrapper_width);
   &__general_info {
     display: flex;
     justify-content: space-evenly;
   }
 
   &__description {
-    display: flex;
-    flex-direction: column;
+    @include container();
     font-size: rem(25px);
     align-items: center;
     padding: 1em;
