@@ -1,11 +1,11 @@
 import smoothscroll from 'smoothscroll-polyfill';
-import { getCoords, tabSwitcher } from './lib';
+import { getCoords, tabSwitcher, setCSSProp } from './lib';
 
 smoothscroll.polyfill();
 
-const images = document.querySelectorAll('.project_item__image');
 const colors = ['rgb(0, 204, 0)', '#b4ec58', 'rgb(82, 120, 208)', 'rgb(146, 250, 193)', 'rgb(179, 116, 176)'];
 
+const images = document.querySelectorAll('.project_item__image');
 const projects = document.querySelectorAll('.project_block__project_item');
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav_link');
@@ -13,26 +13,23 @@ const topAnchor = document.querySelectorAll('.top_anchor');
 const bottomAnchor = document.querySelectorAll('.bottom_anchor');
 const aboutContent = document.querySelector('.about_content');
 const navBar = document.querySelector('.navigation_block');
+
 let navHeight = navBar.getBoundingClientRect().height;
-document.documentElement.style.setProperty('--anchor', `${navHeight}px`);
+
+// setCSSProp('--anchor', `${navHeight}px`);
 
 const scrollToAnchor = (i) => {
   const section = sections[i];
   const scrollValue = getCoords(section).top;
   navHeight = navBar.getBoundingClientRect().height;
-  document.documentElement.style.setProperty('--anchor', `${navHeight+10}px`);
+  setCSSProp('--anchor', `${navHeight+10}px`)
   window.scroll({top: scrollValue-navHeight, behavior: 'smooth'});
   
 };
 
 const setNavBackground = (index) => {
   const color = colors[index];
-  document.documentElement.style.setProperty('--navbg', `${color}`);
-}
-
-const setTabsData = ({width, position}) => {
-  document.documentElement.style.setProperty('--width', width);
-  document.documentElement.style.setProperty('--position', position);
+  setCSSProp('--navbg', `${color}`);
 }
 
 const showProject = (entries, observer) => { 
@@ -48,7 +45,9 @@ const showProject = (entries, observer) => {
 };
 
 const switchTabs = (index) => {
-  setTabsData(tabSwitcher(navLinks[index], index));
+  const {width, position} = tabSwitcher(navLinks[index], index);
+  setCSSProp('--nav_width', `${width}`);
+  setCSSProp('--nav_position', `${position}`);
   setNavBackground(index);
 };
 

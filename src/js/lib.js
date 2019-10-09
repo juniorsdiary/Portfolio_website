@@ -25,7 +25,10 @@ function tabSwitcher(activeTab, index) {
     const width = `${Math.floor((rect.width / fullWidth) * 100)}%`;
     const position = '0%';
     return { width, position }
-  
 }
 
-export {getCoords, getRandom, tabSwitcher};
+const setCSSProp = (key, value) => {
+  document.documentElement.style.setProperty(key, value);
+}
+
+export {getCoords, getRandom, tabSwitcher, setCSSProp};

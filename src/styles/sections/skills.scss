@@ -22,7 +22,6 @@
     overflow: hidden;
     white-space:nowrap;
     background: $skills;
-    clip-path: polygon(50% 0%, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%, 10% 0);
     color: black;
   }
 }
@@ -30,15 +29,13 @@
 .skill_block__title {
   color: $skills;
 }
-
 .skills_tabs {
-  @include size(10);
-  @include size-md(8);
-  @include size-lg(5);
+  // @include size(10);
+  // @include size-md(8);
+  // @include size-lg(5);
   display: flex;
   position: relative;
   &__type {
-    margin: 0 0.5rem;
     padding: 0.5rem;
     transition: color 0.5s ease-in;
     cursor: pointer;
@@ -46,10 +43,13 @@
   &:before {
     content: '';
     position: absolute;
+    width: var(--skills_width);
+    height: 3px;
     bottom: 0;
-    width: 100%;
+    left: var(--skills_position);
     height: 2px;
     background: $skills;
+    transition: left 0.2s linear, width 0.2s linear; 
   }
 }
 .active_tab {

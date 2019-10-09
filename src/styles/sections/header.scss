@@ -6,7 +6,6 @@
   transition: background 0.5s linear;
   z-index: 100;
 }
-
 .nav_links_set {
   position: relative;
   display: inline-flex;
@@ -16,9 +15,9 @@
     content: '';
     position: absolute;
     bottom: 0;
-    width: var(--width);
+    width: var(--nav_width);
     height: 3px;
-    left: var(--position);
+    left: var(--nav_position);
     background: black;
     transition: left 0.2s linear, width 0.2s linear; 
   }
