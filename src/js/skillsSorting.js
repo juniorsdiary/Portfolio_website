@@ -1,5 +1,5 @@
 const tabs = document.querySelector('.skills_tabs');
-const skillsList = document.querySelector('.skills_block').children;
+const skillsList = document.querySelector('.skills_list').children;
 
 function filterSkills(type) {
 	[...skillsList].forEach(item => {

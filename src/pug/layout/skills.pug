@@ -13,14 +13,13 @@ section.skills_page.content-wrapper
     .skills_tabs__type.active_tab='All'
     each value, key in skills_sets
       .skills_tabs__type=key
-  ul.skills_block
+  ul.skills_list
     each skill_set, key in skills_sets
       each skill in skill_set
-        li.skill_item.show_item(data-type=key)=skill
-  //- .react_animation_logo
-  //-   span.first_ring
-  //-   span.second_ring
-  //-   span.third_ring
-  //-   span.inner_dot
-  //- .circle
+        li.skills_list__item.show_item(data-type=key)=skill
+  .react_animation_logo
+    span.first_ring
+    span.second_ring
+    span.third_ring
+    span.inner_dot
   .bottom_anchor
