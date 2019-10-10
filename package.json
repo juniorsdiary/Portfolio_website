@@ -9,6 +9,7 @@
     "last 3 version"
   ],
   "scripts": {
+    "start": "concurrently \"nodemon server/server.js\" \"node scripts/start.js\"",
     "dev": "node scripts/start.js",
     "build": "webpack --color --config config/webpack.prod.js",
     "lint": "eslint --debug ./src/**/*.js --fix",
@@ -77,18 +78,23 @@
     ]
   },
   "dependencies": {
-    "smart-grid": "^2.1.2",
+    "body-parser": "^1.19.0",
     "compression-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.0.0",
     "css-mqpacker": "^7.0.0",
     "cssnano": "^4.1.10",
     "doiuse": "^4.2.0",
+    "express": "^4.17.1",
     "mini-css-extract-plugin": "^0.6.0",
+    "nodemon": "^1.19.3",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-plugin-composition": "^0.1.1",
     "postcss-preset-env": "^6.7.0",
-    "stylelint": "^10.1.0",
-    "terser-webpack-plugin": "^2.1.2",
+    "smart-grid": "^2.1.2",
     "smoothscroll-polyfill": "^0.4.4",
+    "stylelint": "^10.1.0",
+    "compression": "^1.7.4",
+    "terser-webpack-plugin": "^2.1.2",
     "webpack-merge": "^4.2.2"
   }
 }

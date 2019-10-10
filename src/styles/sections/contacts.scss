@@ -1,5 +1,7 @@
 .contacts_page {
-  position: relative;
   height: 100vh;
   background: $secondary;
+  @include container();
+  position: relative;
+  align-items: center;
 }

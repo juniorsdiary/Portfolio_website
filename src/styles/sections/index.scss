@@ -18,8 +18,7 @@
 }
 
 .section_title {
-    @include size(10);
-    display: inline-block;
+    display: inline;
     font-size: rem(38px);
     margin: 0.5rem 0;
     color: white;

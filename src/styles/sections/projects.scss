@@ -1,7 +1,8 @@
 .projects_page {
   position: relative;
-  background: #0000007e;
+  @include container();
   align-items: center;
+  background: #0000007e;
 }
 
 .project_block {
