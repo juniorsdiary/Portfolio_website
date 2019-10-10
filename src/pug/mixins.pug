@@ -9,6 +9,6 @@ mixin project_card(title, imageSrc, description, web_link, git_link, sills_used)
       ul.hover_info__skills_used_list
         for skill in sills_used
           li=skill
-      a.hover_info__web_page_link(href=web_link target='blank')='Visit web-page'
+      a.hover_info__web_page_link(href=web_link target='blank')='Visit web page'
       a.hover_info__repo_link(href=git_link target='blank')
         include ../assets/imgs/github-logo.svg

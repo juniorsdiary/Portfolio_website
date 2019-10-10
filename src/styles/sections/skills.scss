@@ -21,6 +21,7 @@
     display: inline;
     overflow: hidden;
     white-space:nowrap;
+    line-height: 1rem;
     background: $skills;
     color: black;
   }
@@ -30,15 +31,14 @@
   color: $skills;
 }
 .skills_tabs {
-  // @include size(10);
-  // @include size-md(8);
-  // @include size-lg(5);
   display: flex;
   position: relative;
+  margin: 0.5rem;
   &__type {
     position: relative;
     z-index: 3;
-    padding: 0.5rem;
+    line-height: 1rem;
+    padding: 0.3rem;
     transition: color 0.5s ease-in;
     cursor: pointer;
   }
