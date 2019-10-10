@@ -36,6 +36,8 @@
   display: flex;
   position: relative;
   &__type {
+    position: relative;
+    z-index: 3;
     padding: 0.5rem;
     transition: color 0.5s ease-in;
     cursor: pointer;
@@ -47,14 +49,17 @@
     height: 3px;
     bottom: 0;
     left: var(--skills_position);
-    height: 2px;
+    height: 100%;
     background: $skills;
-    transition: left 0.2s linear, width 0.2s linear; 
+    border-radius: 10px;
+    transition: left 0.2s linear, width 0.2s linear;
+    z-index: 2;
   }
 }
 .active_tab {
   color: black;
 }
+
 .show_item {
   margin: 0.25rem;
   padding: 0.25rem 0.7rem;
@@ -63,7 +68,7 @@
   transition: max-width 1s linear, opacity 1s linear, 0.1s margin linear, 0.1s padding linear;
 }
 .hide_item {
-  margin: 0.25rem 0;
+  margin: 0;
   padding: 0;
   opacity: 0;
   max-width: 0px;

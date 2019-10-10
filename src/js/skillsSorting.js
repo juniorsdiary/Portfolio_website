@@ -1,8 +1,10 @@
 import { tabSwitcher, setCSSProp } from './lib';
 
+const DEFAULT_TAB = 'Overview'
+
 const tabs = document.querySelector('.skills_tabs');
 const skillsList = document.querySelector('.skills_list').children;
-
+// console.log(tabs.children[0].getBoundingClientRect().width);
 setCSSProp('--skills_width', `${tabs.children[0].getBoundingClientRect().width}px`);
 setCSSProp('--skills_position', `${0}%`);
 		  
@@ -10,11 +12,14 @@ function filterSkills(type) {
 	[...skillsList].forEach(item => {
 		if (item.getAttribute('data-type') !== type) {
 			item.classList.add('hide_item');
+			item.classList.remove('show_item');
 		} else {
 			item.classList.remove('hide_item');
+			item.classList.add('show_item');
 		}
-		if (type === 'All') {
+		if (type === DEFAULT_TAB) {
 			item.classList.remove('hide_item');
+			item.classList.add('show_item');
 		}
 	})
 }

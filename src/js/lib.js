@@ -17,12 +17,12 @@ function tabSwitcher(activeTab, index) {
       .filter((_, i) => i < index)
       .map(item => item.getBoundingClientRect().width)
       .reduce((a, b) => a + b);
-    const position = `${Math.floor((value / fullWidth) * 100)}%`;
-    const width = `${Math.floor((activeTab.getBoundingClientRect().width / fullWidth) * 100)}%`;
+    const position = `${((value / fullWidth) * 100).toFixed(1)}%`;
+    const width = `${((activeTab.getBoundingClientRect().width / fullWidth) * 100).toFixed(1)}%`;
     return { width, position }
   } 
     const rect = activeTab.getBoundingClientRect();
-    const width = `${Math.floor((rect.width / fullWidth) * 100)}%`;
+    const width = `${((rect.width / fullWidth) * 100).toFixed(1)}%`;
     const position = '0%';
     return { width, position }
 }
