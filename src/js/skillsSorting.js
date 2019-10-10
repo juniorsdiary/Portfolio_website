@@ -4,7 +4,7 @@ const DEFAULT_TAB = 'Overview'
 
 const tabs = document.querySelector('.skills_tabs');
 const skillsList = document.querySelector('.skills_list').children;
-// console.log(tabs.children[0].getBoundingClientRect().width);
+
 setCSSProp('--skills_width', `${tabs.children[0].getBoundingClientRect().width}px`);
 setCSSProp('--skills_position', `${0}%`);
 		  
@@ -40,6 +40,5 @@ function switchTabs() {
 		filterSkills(e.target.textContent);
 	}
 }
-const switchTabsEvent = switchTabs.call(tabs);
 
-tabs.addEventListener('click', switchTabsEvent);
+tabs.addEventListener('click', switchTabs.call(tabs));

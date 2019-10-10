@@ -3,7 +3,7 @@ import { getCoords, tabSwitcher, setCSSProp } from './lib';
 
 smoothscroll.polyfill();
 
-const colors = ['rgb(0, 204, 0)', '#b4ec58', 'rgb(82, 120, 208)', 'rgb(146, 250, 193)', 'rgb(179, 116, 176)'];
+const colors = ['rgb(0, 204, 0)', '#b4ec58', 'rgb(82, 120, 208)', 'rgb(146, 250, 193)', 'rgb(243, 130, 0)'];
 
 const images = document.querySelectorAll('.project_item__image');
 const projects = document.querySelectorAll('.project_block__project_item');
@@ -22,7 +22,7 @@ const scrollToAnchor = (i) => {
   const section = sections[i];
   const scrollValue = getCoords(section).top;
   navHeight = navBar.getBoundingClientRect().height;
-  setCSSProp('--anchor', `${navHeight+10}px`)
+  setCSSProp('--anchor', `${navHeight+10}px`);
   window.scroll({top: scrollValue-navHeight, behavior: 'smooth'});
   
 };
@@ -87,7 +87,7 @@ const animateAboutPageCallBack = (entries, observer) => {
 const projectsObserver = new IntersectionObserver(showProject, { rootMargin: '100px', threshold: 0.2 });
 const topAnchorObserver = new IntersectionObserver(topAnchorsCallBack, { threshold: 1});
 const bottomAnchorObserver = new IntersectionObserver(bottomAnchorsCallBack, { threshold: 1 });
-const animateAboutPage = new IntersectionObserver(animateAboutPageCallBack)
+const animateAboutPage = new IntersectionObserver(animateAboutPageCallBack, { rootMargin: '200px', threshold: 0.2 });
 
 projects.forEach(project => projectsObserver.observe(project));
 topAnchor.forEach(anchor => topAnchorObserver.observe(anchor));
