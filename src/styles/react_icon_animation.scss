@@ -1,4 +1,10 @@
-%ring {
+.react_animation_logo {
+  position: relative;
+  width: 200px;
+  height: 100px;
+}
+@media only screen and (min-device-width: 1000px) {
+  %ring {
     display: block;
     position: absolute;
     top: 50%;
@@ -19,28 +25,28 @@
     border-radius: 50%;
   }
   .react_animation_logo {
-    position: relative;
-    width: 200px;
-    height: 130px;
+    #react-icon {
+      display: none;
+    }
     transform-style: preserve-3d;
     perspective-origin: center;
     perspective: 1000px;
   }
   .first_ring {
     @extend %ring;
-    transform: translate3d(-50%, -50%, 0px) rotateX(70deg) rotateZ(-180deg);
+    transform: translate3d(-50%, -50%, 0px) rotateX(70deg) rotateZ(-180deg);    
     animation: 2s rotate-1 linear infinite;
     &:after {
       @extend %after_ring;
       background: radial-gradient(circle at 50% 50%, $skills, rgb(25, 51, 73));
       background-size: 1000%;
       transform: translate3d(15px, -5px, 0px) rotateZ(5deg) rotateX(90deg);
-      animation: counter-rotation-1 2s linear infinite, rotate-light-position-1 2s linear infinite;
+      animation: counter-rotation-1 2s linear infinite, light-position 2s linear infinite;
     }
   }
   .second_ring {
     @extend %ring;
-    transform: translate3d(-50%, -50%, 0px) rotateX(50deg) rotateY(60deg) rotateZ(-180deg);
+    transform: translate3d(-50%, -50%, 0px) rotateX(60deg) rotateY(50deg) rotateZ(-180deg);
     animation: 2s rotate-2 1s linear infinite;
     &:after {
       @extend %after_ring;
@@ -48,12 +54,12 @@
       background-size: 1000%;
       background-position: 105% 50%;
       transform: translate3d(10px,0,0) rotate(40deg) rotateY(180deg) rotateX(90deg);
-      animation: 2s counter-rotation-2 1s linear infinite, 2s rotate-light-position-2 1s linear infinite;
+      animation: 2s counter-rotation-2 1s linear infinite, 2s light-position 1s linear infinite;
     }
   }
   .third_ring {
     @extend %ring;
-    transform: translate3d(-50%, -50%, 0px) rotateX(-50deg) rotateY(60deg) rotateZ(0deg);
+    transform: translate3d(-50%, -50%, 0px) rotateX(-60deg) rotateY(50deg) rotateZ(0deg);
     animation: 2s rotate-3 2s linear infinite;
     &:after {
       @extend %after_ring;
@@ -61,7 +67,7 @@
       background-size: 1000%;
       background-position: 105% 50%;
       transform: translate3d(6px,2px,0) rotate(80deg) rotateY(90deg) rotateX(40deg);
-      animation: 2s counter-rotation-3 2s linear infinite, 2s rotate-light-position-3 2s linear infinite;
+      animation: 2s counter-rotation-3 2s linear infinite, 2s light-position 2s linear infinite;
     }
   }
   .inner_dot {
@@ -75,82 +81,64 @@
     height: 15px;
     border-radius: 50%;
   }
-  
-  @keyframes rotate-1 {
-    from {
-      transform: translate3d(-50%, -50%, 0px) rotateX(70deg) rotateZ(-180deg);
-    }
-    to {
-      transform: translate3d(-50%, -50%, 0px) rotateX(70deg) rotateZ(180deg);
-    }
+}
+@keyframes rotate-1 {
+  from {
+    transform: translate3d(-50%, -50%, 0px) rotateX(70deg) rotateZ(-180deg);
   }
-  @keyframes counter-rotation-1 {
-    from {
-      transform: translate3d(15px, -5px, 0px) rotateZ(5deg) rotateX(90deg);
-    }
-    to {
-      transform: translate3d(15px, -5px, 0px) rotateZ(-355deg) rotateX(90deg);
-    }
+  to {
+    transform: translate3d(-50%, -50%, 0px) rotateX(70deg) rotateZ(180deg);
   }
-  
-  @keyframes rotate-light-position-1 {
-    0% {
-      background-position: 105% 50%;
-    }
-    100% {
-      background-position: -5% 50%;
-    }
+}
+@keyframes counter-rotation-1 {
+  from {
+    transform: translate3d(15px, -5px, 0px) rotateZ(5deg) rotateX(90deg);
   }
-  
-  @keyframes rotate-2 {
-    from {
-      transform: translate3d(-50%, -50%, 0px) rotateX(50deg) rotateY(60deg) rotateZ(-180deg);
-    }
-    to {
-      transform: translate3d(-50%, -50%, 0px) rotateX(50deg) rotateY(60deg) rotateZ(180deg);
-    }
+  to {
+    transform: translate3d(15px, -5px, 0px) rotateZ(-355deg) rotateX(90deg);
   }
-  @keyframes counter-rotation-2 {
-    from {
-      transform: translate3d(10px,0,0) rotate(40deg) rotateY(180deg) rotateX(90deg);
-    }
-    to {
-      transform: translate3d(10px,0,0) rotate(-320deg) rotateY(180deg) rotateX(90deg);
-    }
+}
+
+@keyframes rotate-2 {
+  from {
+    transform: translate3d(-50%, -50%, 0px) rotateX(60deg) rotateY(50deg) rotateZ(-180deg);
   }
-  
-  @keyframes rotate-light-position-2 {
-    0% {
-      background-position: 105% 50%;
-    }
-    100% {
-      background-position: -5% 50%;
-    }
+  to {
+    transform: translate3d(-50%, -50%, 0px) rotateX(60deg) rotateY(50deg) rotateZ(180deg);
   }
-  
-  @keyframes rotate-3 {
-    from {
-      transform: translate3d(-50%, -50%, 0px) rotateX(-50deg) rotateY(60deg) rotateZ(0deg);
-    }
-    to {
-      transform: translate3d(-50%, -50%, 0px) rotateX(-50deg) rotateY(60deg) rotateZ(360deg);
-    }
+}
+@keyframes counter-rotation-2 {
+  from {
+    transform: translate3d(10px,0,0) rotate(40deg) rotateY(180deg) rotateX(90deg);
   }
-  
-  @keyframes counter-rotation-3 {
-    from {
-      transform: translate3d(6px,2px,0) rotate(80deg) rotateY(90deg) rotateX(40deg);
-    }
-    to {
-      transform: translate3d(5px,5px,0px) rotate(-280deg) rotateY(90deg) rotateX(40deg);
-    }
+  to {
+    transform: translate3d(10px,0,0) rotate(-320deg) rotateY(180deg) rotateX(90deg);
   }
-  
-  @keyframes rotate-light-position-3 {
-    0% {
-      background-position: 105% 50%;
-    }
-    100% {
-      background-position: -5% 50%;
-    }
+}
+
+@keyframes rotate-3 {
+  from {
+    transform: translate3d(-50%, -50%, 0px) rotateX(-60deg) rotateY(50deg) rotateZ(0deg);
   }
+  to {
+    transform: translate3d(-50%, -50%, 0px) rotateX(-60deg) rotateY(50deg) rotateZ(360deg);
+  }
+}
+
+@keyframes counter-rotation-3 {
+  from {
+    transform: translate3d(6px,2px,0) rotate(80deg) rotateY(90deg) rotateX(40deg);
+  }
+  to {
+    transform: translate3d(5px,5px,0px) rotate(-280deg) rotateY(90deg) rotateX(40deg);
+  }
+}
+
+@keyframes light-position {
+  0% {
+    background-position: 105% 50%;
+  }
+  100% {
+    background-position: -5% 50%;
+  }
+}

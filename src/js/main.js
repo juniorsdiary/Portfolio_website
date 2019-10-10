@@ -16,7 +16,7 @@ const navBar = document.querySelector('.navigation_block');
 
 let navHeight = navBar.getBoundingClientRect().height;
 
-// setCSSProp('--anchor', `${navHeight}px`);
+setCSSProp('--anchor', `${navHeight}px`);
 
 const scrollToAnchor = (i) => {
   const section = sections[i];
