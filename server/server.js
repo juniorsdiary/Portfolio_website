@@ -7,7 +7,7 @@ const transport = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'tralivaliustavali@gmail.com',
-    pass: 'tropo12sphere34'
+    pass: 'Tropo12_Sphere34_'
   }
 });
 
@@ -41,7 +41,8 @@ app.post('/', (req, res) => {
     if (err) {
       res.json({
         status: false,
-        message: 'Something went wrong'
+        message: 'Something went wrong',
+        data: err
       });
     } else {
       res.json({
