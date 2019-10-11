@@ -1,7 +1,9 @@
 section.contacts_page
     .top_anchor
     h2.section_title='Contacts'
-    from.contact_from(method='post' action='/')
-        input(placeholder='Enter your name or company' name='name')
+    form.contact_from
+        input(placeholder='Enter your name or company' name='name' value='Vlad')
+        input(placeholder='Enter your email' name='email', value='test@mail.ru')
+        textarea(placeholder='Message for me' name='message')
         button(type='submit')='Send data'
     .bottom_anchor

@@ -76,7 +76,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebPackPlugin([{from: `${paths.appAssets}/imgs`, to: './imgs'}]),
+    new CopyWebPackPlugin([{from: `${paths.appAssets}/imgs`, to: 'imgs'}]),
     new ImageminPlugin({
       test: /\.(jpe?g|png|gif|svg)$/i,
       optipng: {
@@ -87,7 +87,7 @@ module.exports = {
       }
     }),
     new MiniCssExtractPlugin({
-      filename: './css/[name].[hash].css',
+      filename: './[name].[hash].css',
     }),
     ...PAGES.map(
       page =>

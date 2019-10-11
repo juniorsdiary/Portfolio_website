@@ -9,7 +9,7 @@ module.exports = merge(common, {
     path: paths.appPublic,
     filename: '[name].js',
     chunkFilename: '[name].bundle.js',
-    publicPath: '/',
+    publicPath: './'
   },
   resolve: {
     alias: {

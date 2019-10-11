@@ -1,4 +1,5 @@
 import smoothscroll from 'smoothscroll-polyfill';
+import axios from 'axios'
 import { getCoords, tabSwitcher, setCSSProp } from './lib';
 
 smoothscroll.polyfill();
@@ -13,6 +14,30 @@ const topAnchor = document.querySelectorAll('.top_anchor');
 const bottomAnchor = document.querySelectorAll('.bottom_anchor');
 const aboutContent = document.querySelector('.about_content');
 const navBar = document.querySelector('.navigation_block');
+const formNode = document.querySelector('.contact_from');
+
+formNode.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const data = {}
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [key, value] of new FormData(e.target).entries()) {
+    data[key] = value;
+  }
+
+  axios({
+    method: 'post',
+    url: '/',
+    headers: {
+      'accept': 'application/json',
+      'Content-Type': 'application/json;charset=UTF-8',
+      "Access-Control-Allow-Origin": "*",
+    },
+    mode: 'no-cors', 
+    data
+  });
+
+  // e.target.reset();
+})
 
 let navHeight = navBar.getBoundingClientRect().height;
 
@@ -24,7 +49,6 @@ const scrollToAnchor = (i) => {
   navHeight = navBar.getBoundingClientRect().height;
   setCSSProp('--anchor', `${navHeight+10}px`);
   window.scroll({top: scrollValue-navHeight, behavior: 'smooth'});
-  
 };
 
 const setNavBackground = (index) => {
