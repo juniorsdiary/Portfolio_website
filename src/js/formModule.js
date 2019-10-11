@@ -4,8 +4,7 @@ import { setCSSProp } from './lib';
 const formNode = document.querySelector('.contact_from');
 const resultNode = document.querySelector('.submit_block__results');
 
-const setFormResponse = ({status, message, data}) => {
-		console.log(data);
+const setFormResponse = ({status, message}) => {
 		if (status) {
 			setCSSProp('--result_color', '#d2e96c');
 		} else {

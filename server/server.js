@@ -6,8 +6,8 @@ const nodemailer = require('nodemailer');
 const transport = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: '',
-    pass: ''
+    user: 'tralivaliustavali@gmail.com',
+    pass: 'tropo12sphere34'
   }
 });
 
@@ -30,8 +30,8 @@ app.post('/', (req, res) => {
   const {name, email, message} = req.body;
 
   transport.sendMail({
-    from: '',
-    to: '',
+    from: 'tralivaliustavali@gmail.com',
+    to: 'vlad.evstigneev@mail.ru',
     subject: 'Message from portfolio web-site',
     text: `
       ${name} - ${email}
@@ -41,8 +41,7 @@ app.post('/', (req, res) => {
     if (err) {
       res.json({
         status: false,
-        message: 'Something went wrong',
-        data: err
+        message: 'Something went wrong'
       });
     } else {
       res.json({
