@@ -22,21 +22,33 @@ function shouldCompress(req, res) {
 }
 
 app.use(compression({ filter: shouldCompress }));
-
 app.use(express.static('public'));
+app.use(bodyParser.json());
 
-app.post('/', bodyParser.json(), (req) => {
+app.post('/', (req, res) => {
   
   const {name, email, message} = req.body;
-  
+
   transport.sendMail({
     from: '',
-    to: 'vlad.evstigneev@mail.ru',
+    to: '',
     subject: 'Message from portfolio web-site',
     text: `
       ${name} - ${email}
       ${message}
     `
+  }, (err) => {
+    if (err) {
+      res.json({
+        status: false,
+        message: 'Something went wrong'
+      });
+    } else {
+      res.json({
+        status: true,
+        message: 'Your message delivered'
+      });
+    }
   });
 })
 

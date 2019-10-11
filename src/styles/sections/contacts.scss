@@ -5,3 +5,90 @@
   position: relative;
   align-items: center;
 }
+
+.contact_from {
+  @include container();
+  @include size(10);
+  max-width: 600px;
+  justify-content: center;
+  align-items: center;
+  margin: 1px;
+  padding: 1px;
+  border: 1px solid transparent;
+  input, textarea {
+    @include size(10);
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-bottom: 3px solid $contacts;
+    background: transparent;
+    color: white;
+    @include placeholder {
+      color: rgba(255, 255, 255, 0.641) !important; 
+    }
+  }
+  textarea {
+    resize: none;
+  }
+  
+}
+
+.submit_block {
+  display: flex;
+  justify-content: center;
+  @include size(10);
+  margin: 0.5rem;
+  button {
+    margin: 0 0 0 auto;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: rem(20px);
+    background: $contacts;
+    cursor: pointer;
+  }
+  &__results {
+    display: block;
+    font-size: rem(16px);
+    background: var(--result_color);
+    opacity: 0;
+    padding: 0.5rem;
+  }
+}
+
+.socials {
+  color: white;
+  font-size: rem(25px);
+  &__title {
+    text-align: center;
+  }
+  &__links_list {
+    display: flex;
+    justify-content: center;
+    color: black;
+    li {
+      line-height: 1rem;
+      background: $contacts;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem;
+    }
+  }
+}
+
+.show_message {
+  animation: show 8s linear;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

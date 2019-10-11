@@ -1,9 +1,20 @@
 section.contacts_page
-    .top_anchor
-    h2.section_title='Contacts'
-    form.contact_from
-        input(placeholder='Enter your name or company' name='name' value='Vlad')
-        input(placeholder='Enter your email' name='email', value='test@mail.ru')
-        textarea(placeholder='Message for me' name='message')
-        button(type='submit')='Send data'
+  .top_anchor
+  h2.section_title='Contact form'
+  form.contact_from
+    input(placeholder='Enter your name or company' name='name' value=name required=true)
+    input(placeholder='Enter your email' name='email')
+    textarea(placeholder='Message for me' name='message' required=true)
+    .submit_block
+      span.submit_block__results
+      button(type='submit')='Send'
+  .socials
+    p.socials__title='Also you can easily contact me via social networks'
+    ul.socials__links_list
+      li
+        a(href='https://github.com/juniorsdiary' target='blank')='GitHub'
+      li
+        a(href='https://discord.gg/TP7Q7mS' target='blank')='Discord'
+      li
+        a(href='' target='blank')='LinkedIn'
     .bottom_anchor
