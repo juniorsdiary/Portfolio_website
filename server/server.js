@@ -41,7 +41,8 @@ app.post('/', (req, res) => {
     if (err) {
       res.json({
         status: false,
-        message: 'Something went wrong'
+        message: 'Something went wrong',
+        data: err
       });
     } else {
       res.json({
