@@ -93,6 +93,7 @@ module.exports = {
       page =>
         new HtmlWebpackPlugin({
           template: `${PAGES_DIR}/${page}`,
+          favicon: `${paths.appSrc}/logo.ico`,
           filename: `./${page.replace(/\.pug/, '.html')}`,
           minify: {
             removeAttributeQuotes: true,

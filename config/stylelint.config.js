@@ -16,7 +16,7 @@ module.exports = {
     'function-linear-gradient-no-nonstandard-direction': true,
     'keyframe-declaration-no-important': true,
     'media-feature-name-no-unknown': true,
-    'no-descending-specificity': true,
+    'no-descending-specificity': false,
     'no-duplicate-at-import-rules': true,
     'no-duplicate-selectors': true,
     'no-empty-source': true,

@@ -6,11 +6,13 @@
   transition: background 0.5s linear;
   z-index: 100;
 }
+
 .nav_links_set {
   position: relative;
   display: inline-flex;
   justify-content: center;
   padding: 0.5rem 0;
+  color: $default_dark;
   &:after {
     content: '';
     position: absolute;
@@ -18,32 +20,16 @@
     width: var(--nav_width);
     height: 4px;
     left: var(--nav_position);
-    background: black;
+    background: $default_dark;
     transition: left 0.2s linear, width 0.2s linear; 
   }
 }
 
 .nav_link {
-  color: black;
-  a {
-    font-size: rem(20px);
-    text-align: center;
-    border-radius: 10px;
-    padding: 0 10px;
-    color: inherit;
-    display: block;
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  display: block;
+  font-size: rem(20px);
+  text-align: center;
+  border-radius: 10px;
+  padding: 0 10px;
 }
 

@@ -11,6 +11,20 @@ $number-length: (
   10: 460
 );
 
+#react-icon {
+  width: 100%;
+  height: 100%;
+  path {
+    fill: none;
+    stroke: $skills;
+    stroke-width: 5px;
+    animation: stroke-icon 2s linear forwards alternate infinite;
+  }
+  circle {
+    fill: $skills;
+  }
+}
+
 #welcome {
   position: relative;
   display: block;
@@ -42,20 +56,6 @@ $number-length: (
   }
   to {
     fill: $title-color;
-  }
-}
-
-#react-icon {
-  width: 100%;
-  height: 100%;
-  path {
-    fill: none;
-    stroke: $skills;
-    stroke-width: 5px;
-    animation: stroke-icon 2s linear forwards alternate infinite;
-  }
-  circle {
-    fill: $skills;
   }
 }
 

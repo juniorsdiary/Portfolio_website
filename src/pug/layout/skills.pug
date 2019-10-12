@@ -22,5 +22,5 @@ section.skills_page
   ul.skills_list
     each skill_set, key in skills_sets
       each skill in skill_set
-        li.skills_list__item.show_item(data-type=key)=skill
+        li(data-type=key class='skills_list__item show_item')=skill
   .bottom_anchor

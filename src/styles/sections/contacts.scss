@@ -28,7 +28,10 @@
     }
   }
   textarea {
-    resize: none;
+    @include max-size(10);
+    @include min-size(10);
+    max-height: 150px;
+    min-height: 150px;
   }
   
 }

@@ -15,7 +15,7 @@
     &:-ms-input-placeholder      { @content; }
   }
   
-  @mixin simple-size($width,$height: $width) {
+  @mixin equal-size($width,$height: $width) {
     width: $width;
     height: $height;
   }
@@ -40,10 +40,6 @@
     transform: translate(-50%, -50%);
   }
 
-  @function calcVh($value) {
-    @return 100vh;
-  }
-
   @mixin fixed-vh($height) {
     height: #{$height}vh;
     height: calc(var(--vh, 1vh)*#{$height});
@@ -55,7 +51,17 @@
     margin: 0 auto;
     max-width: $max-width;
   }
+  
   @mixin container {
     display: flex;
     flex-direction: column;
+  }
+
+  @mixin max-size($n) {
+    $val: 100% / $columns * $n;
+    max-width: #{calc(#{$val} - #{$offset})};
+  }
+  @mixin min-size($n) {
+    $val: 100% / $columns * $n;
+    min-width: #{calc(#{$val} - #{$offset})};
   }
