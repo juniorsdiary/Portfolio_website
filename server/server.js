@@ -3,16 +3,12 @@ const bodyParser = require('body-parser');
 const compression = require('compression');
 const nodemailer = require('nodemailer');
 
-let testAccount = nodemailer.createTestAccount();
-
-let transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
-    secure: false, // true for 465, false for other ports
-    auth: {
-        user: testAccount.user, // generated ethereal user
-        pass: testAccount.pass // generated ethereal password
-    }
+const transport = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'johndowmailbox444@gmail.com',
+    pass: 'U56_ty!fas'
+  }
 });
 
 const PORT = process.env.PORT || 8080;
@@ -33,8 +29,8 @@ app.post('/', (req, res) => {
   
   const {name, email, message} = req.body;
 
-  transporter.sendMail({
-    from: 'tralivaliustavali@gmail.com',
+  transport.sendMail({
+    from: 'johndowmailbox444@gmail.com',
     to: 'vlad.evstigneev@mail.ru',
     subject: 'Message from portfolio web-site',
     text: `
