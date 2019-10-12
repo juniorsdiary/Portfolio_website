@@ -1,10 +1,16 @@
 section.contacts_page
   .top_anchor
   h2.section_title='Contact form'
-  form.contact_from
-    input(placeholder='Enter your name or company' name='name' value=name required=true)
-    input(placeholder='Enter your email' name='email')
-    textarea(placeholder='Message for me' name='message' required=true)
+  form.contact_form
+    .contact_form__name_field
+      label(for='name')='Enter your name'
+      input(name='name' id='name' required=true)
+    .contact_form__email_field
+      label(for='email')='Enter your email'
+      input( name='email' id='email')
+    .contact_form__message_field
+      label(for='message')='Message for me'
+      textarea( id='message' name='message' required=true)
     .submit_block
       span.submit_block__results
       button(type='submit')='Send'

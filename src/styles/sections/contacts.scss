@@ -5,35 +5,41 @@
   position: relative;
   align-items: center;
 }
-
-.contact_from {
+%input-wrapper {
+  position: relative;
+  margin-bottom: 0.5rem;
+  @include size(10);
+  @include container;
+}
+.contact_form {
   @include container();
   @include size(10);
   max-width: 600px;
   justify-content: center;
   align-items: center;
-  margin: 1px;
-  padding: 1px;
-  border: 1px solid transparent;
+  color: white;
+  &__name_field {
+    @extend %input-wrapper;
+  }
+  &__email_field {
+    @extend %input-wrapper;
+  }
+  &__message_field {
+    @extend %input-wrapper;
+    textarea {
+      max-width: 100%;
+      min-width: 100%;
+      min-height: 100px;
+      max-height: 100px;
+    }
+  }
   input, textarea {
-    @include size(10);
-    margin: 0.5rem;
-    padding: 0.5rem;
+    color: white;
+    padding: 7px;
     border: none;
     border-bottom: 3px solid $contacts;
     background: transparent;
-    color: white;
-    @include placeholder {
-      color: rgba(255, 255, 255, 0.641) !important; 
-    }
   }
-  textarea {
-    @include max-size(10);
-    @include min-size(10);
-    max-height: 150px;
-    min-height: 150px;
-  }
-  
 }
 
 .submit_block {
@@ -60,7 +66,7 @@
 
 .socials {
   color: white;
-  font-size: rem(25px);
+  font-size:16px;
   &__title {
     text-align: center;
   }
@@ -69,7 +75,7 @@
     justify-content: center;
     color: black;
     li {
-      line-height: 1rem;
+      line-height: 16px;
       background: $contacts;
       padding: 0.5rem 1rem;
       margin: 0.5rem;

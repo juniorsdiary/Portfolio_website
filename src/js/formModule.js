@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { setCSSProp } from './lib';
 
-const formNode = document.querySelector('.contact_from');
+const formNode = document.querySelector('.contact_form');
 const resultNode = document.querySelector('.submit_block__results');
 
 const setFormResponse = ({status, message, data}) => {
