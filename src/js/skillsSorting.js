@@ -4,22 +4,20 @@ const DEFAULT_TAB = 'Overview'
 
 const tabs = document.querySelector('.skills_tabs');
 const skillsList = document.querySelector('.skills_list').children;
+const initTabData = tabSwitcher(tabs.children[0], 0);
 
-setCSSProp('--skills_width', `${tabs.children[0].getBoundingClientRect().width}px`);
-setCSSProp('--skills_position', `${0}%`);
+setCSSProp('--skills_width', `${initTabData.width}`);
+setCSSProp('--skills_position', `${initTabData.position}`);
 		  
 function filterSkills(type) {
 	[...skillsList].forEach(item => {
 		if (item.getAttribute('data-type') !== type) {
 			item.classList.add('hide_item');
-			item.classList.remove('show_item');
 		} else {
 			item.classList.remove('hide_item');
-			item.classList.add('show_item');
 		}
 		if (type === DEFAULT_TAB) {
 			item.classList.remove('hide_item');
-			item.classList.add('show_item');
 		}
 	})
 }
